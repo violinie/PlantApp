@@ -1,0 +1,16 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#003d00"
+  },
+  "files.trimTrailingWhitespace": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "prettier.disableLanguages": ["html"],
+  "javascript.implicitProjectConfig.experimentalDecorators": true
+}
