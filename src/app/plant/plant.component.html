@@ -1,4 +1,6 @@
 <p>plant works!</p>
-<div>
-  <app-card *ngFor="let plant of plants" [plant]="plant"></app-card>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let plant of plants">
+    <app-card [plant]="plant" class="card"></app-card>
+  </div>
 </div>

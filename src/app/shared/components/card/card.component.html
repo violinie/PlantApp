@@ -1,9 +1,9 @@
-<div>
-  <!-- <a [routerLink]="['/plant', plant.slug]"> {{ plant.name }} </a> -->
-  card {{ plant?.name }}
-  <img
-    [src]="plant?.image"
-    class="card__image"
-    [title]="plant?.name + ' image'"
-  />
+<img
+  [src]="plant?.image"
+  class="card-img-top"
+  [title]="plant?.name + ' image'"
+/>
+<div class="card-body">
+  <h5 class="card-title">{{ plant?.name }}</h5>
+  <button type="button" class="btn btn-primary">Primary</button>
 </div>
