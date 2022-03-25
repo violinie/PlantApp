@@ -1,6 +1,2 @@
 <p>plant works!</p>
-<ul>
-  <li *ngFor="let plant of plants">
-    <a [routerLink]="['/plant', plant.slug]"> {{ plant.name }} </a>
-  </li>
-</ul>
+<div><app-card *ngFor="let plant of plants" [plant]="plant"></app-card></div>
