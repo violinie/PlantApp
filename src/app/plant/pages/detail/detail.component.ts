@@ -8,16 +8,15 @@ import { Plant } from 'src/app/interfaces/plant.interface';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-  private plants: Plant[] = plants
-
+  // create "let" plant for this component
   public plant: Plant | undefined
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {  }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = routeParams.get('id');
-    this.plant = this.plants.find(plant => productIdFromRoute === plant.slug)
+    this.plant = plants.find(plant => productIdFromRoute === plant.slug)
   }
 
 }
