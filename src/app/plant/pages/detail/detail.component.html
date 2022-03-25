@@ -1,1 +1,9 @@
-<h1>{{ plant?.name }}</h1>
+<div class="my-5 row">
+  <div class="col">
+    <img [src]="plant?.image" alt="" class="rounded" />
+  </div>
+  <div class="col">
+    <h1>{{ plant?.name }}</h1>
+    <p>{{ plant?.desctiption }}</p>
+  </div>
+</div>
