@@ -1,8 +1,10 @@
-<img
-  [src]="plant?.image"
-  class="card-img-top"
-  [title]="plant?.name + ' image'"
-/>
-<div class="card-body">
-  <h5 class="card-title text-center">{{ plant?.name }}</h5>
-</div>
+<a [routerLink]="['/plant', plant?.slug]">
+  <img
+    [src]="plant?.image"
+    class="card-img-top"
+    [title]="plant?.name + ' image'"
+  />
+  <div class="card-body">
+    <h5 class="card-title text-center">{{ plant?.name }}</h5>
+  </div>
+</a>
