@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
 import { HeaderComponent } from './components/header/header.component';
 import { SharedModule } from './shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     HomepageModule,
     SharedModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
