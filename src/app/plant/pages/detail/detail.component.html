@@ -1,9 +1,16 @@
 <div class="my-5 row">
   <div class="col">
-    <img [src]="plant?.image" alt="" class="rounded" />
+    <img [src]="plant?.image" alt="" class="rounded img__plant" />
   </div>
   <div class="col">
     <h1>{{ plant?.name }}</h1>
     <p>{{ plant?.desctiption }}</p>
+    <div>{{ plant?.hydroponics }}</div>
+    <div>{{ plant?.difficulty }}</div>
+    <div>{{ plant?.light }}</div>
+    <div>{{ plant?.water }}</div>
+    <div>{{ plant?.dew }}</div>
+    <div>{{ plant?.propagation }}</div>
+    <div>{{ plant?.common_problems }}</div>
   </div>
 </div>
