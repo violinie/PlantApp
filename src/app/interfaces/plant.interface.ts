@@ -26,8 +26,7 @@ export type Species =
   | 'alocasia'
   | 'epipremnum-scindapsus'
   | 'peperomia'
-  | 'ficus'
-  | '';
+  | 'ficus';
 
 export enum Difficulty {
   easy = 'Pro začátečníky',
