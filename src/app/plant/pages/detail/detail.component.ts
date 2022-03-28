@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {
+  faCloudRain,
+  faExclamationTriangle,
+  faLungs,
+  faMehBlank,
+  faPaw,
+  faSeedling,
+  faSun,
+  faTint
+} from '@fortawesome/free-solid-svg-icons';
 import { plants } from 'src/app/api/plants.api';
 import { Plant } from 'src/app/interfaces/plant.interface';
 
@@ -8,15 +18,23 @@ import { Plant } from 'src/app/interfaces/plant.interface';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-  // create "let" plant for this component
-  public plant: Plant | undefined
+  faSun = faSun;
+  faLungs = faLungs;
+  faPaw = faPaw;
 
-  constructor(private route: ActivatedRoute) {  }
+  faTint = faTint;
+  faCloudRain = faCloudRain;
+  faMehBlank = faMehBlank;
+  faSeedling = faSeedling;
+  faExclamationTriangle = faExclamationTriangle;
+  // create "let" plant for this component
+  public plant: Plant | undefined;
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = routeParams.get('id');
-    this.plant = plants.find(plant => productIdFromRoute === plant.slug)
+    this.plant = plants.find(plant => productIdFromRoute === plant.slug);
   }
-
 }
