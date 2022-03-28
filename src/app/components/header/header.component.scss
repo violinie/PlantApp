@@ -1,10 +1,11 @@
 .navbar {
   height: 4.5rem;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 .nav-link {
   padding: 1.5rem;
   &:hover {
-    background-color: #a1bf07;
+    background-color: lightgrey;
   }
 }
