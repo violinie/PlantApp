@@ -1,0 +1,10 @@
+.navbar {
+  height: 4.5rem;
+}
+
+.nav-link {
+  padding: 1.5rem;
+  &:hover {
+    background-color: #a1bf07;
+  }
+}
