@@ -4,7 +4,8 @@ export const plants: Plant[] = [
   {
     id: 1,
     name: 'Monstera Deliciosa',
-    desctiption: 'Lorem ipsum',
+    desctiption:
+      'Rod rostlin z čeledi árónovité. Jsou to vesměs mohutné liány, vyskytující se výhradně v tropické Americe. Většina druhů má rozměrné, charakteristicky děrované listy. Květy jsou uspořádané do palice s toulcem a jsou opylovány hmyzem. Plodem jsou bobule spojené do palicovitého plodenství. Rod obsahuje asi 40 druhů a je rozšířen ve vlhkých tropech od Mexika po Brazílii. Nejvíce druhů roste v horských pralesích Střední Ameriky. Monstery rostou zpravidla jako poloepifyty na kmenech stromů. Mladé semenáčky mají zajímavá přizpůsobení, umožňující jim nalézt vhodnou oporu pro další růst.',
     image: 'https://source.unsplash.com/random/500x500?monstera',
     hydroponics: true,
     difficulty: 1,

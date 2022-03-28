@@ -1,4 +1,4 @@
-<div class="my-5 row">
+<div class="row">
   <div class="col">
     <img [src]="plant?.image" alt="" class="rounded img__plant" />
   </div>
@@ -6,9 +6,6 @@
     <h1>{{ plant?.name }}</h1>
     <p>{{ plant?.desctiption }}</p>
     <div>
-      <h2>Hydroponie: </h2><span>{{ plant?.hydroponics }}</span>
-    </div>
-      <div>
       <h2>Náročnost: </h2><span>{{ plant?.difficulty }}</span>
     </div>
     <div>
@@ -19,6 +16,9 @@
     </div>
     <div>
       <h2>Vlkost: </h2><span>{{ plant?.dew }}</span>
+    </div>
+    <div>
+      <h2>Hydroponie: </h2><span>{{ plant?.hydroponics }}</span>
     </div>
     <div>
       <h2>Množení</h2><span>{{ plant?.propagation }}</span>
