@@ -4,18 +4,20 @@ export const plants: Plant[] = [
   {
     id: 1,
     name: 'Monstera Deliciosa',
+    slug: 'monstera-deliciosa',
+    image: 'https://source.unsplash.com/random/500x500?monstera',
     desctiption:
       'Rod rostlin z čeledi árónovité. Jsou to vesměs mohutné liány, vyskytující se výhradně v tropické Americe. Většina druhů má rozměrné, charakteristicky děrované listy. Květy jsou uspořádané do palice s toulcem a jsou opylovány hmyzem. Plodem jsou bobule spojené do palicovitého plodenství. Rod obsahuje asi 40 druhů a je rozšířen ve vlhkých tropech od Mexika po Brazílii. Nejvíce druhů roste v horských pralesích Střední Ameriky. Monstery rostou zpravidla jako poloepifyty na kmenech stromů. Mladé semenáčky mají zajímavá přizpůsobení, umožňující jim nalézt vhodnou oporu pro další růst.',
-    image: 'https://source.unsplash.com/random/500x500?monstera',
-    hydroponics: true,
+
     difficulty: 2,
     light: 'Rozptýlené světlo, maximálně mírný polostín',
-    water: 'Po úplném proschnutí',
-    dew: true,
-    propagation: 'Řízky',
     purifyAir: true,
     petFriendly: false,
-    slug: 'monstera-deliciosa'
+
+    hydroponics: true,
+    water: 'Po úplném proschnutí',
+    dew: 'Větší',
+    propagation: 'Řízky'
   },
   {
     id: 2,
@@ -26,7 +28,7 @@ export const plants: Plant[] = [
     difficulty: 1,
     light: 'light',
     water: 'water',
-    dew: true,
+    dew: 'xx',
     propagation: 'propagation',
     slug: 'alocasia-wentii'
   },
@@ -39,7 +41,7 @@ export const plants: Plant[] = [
     difficulty: 1,
     light: 'light',
     water: 'water',
-    dew: true,
+    dew: 'xx',
     propagation: 'propagation',
     slug: 'philodendron-scandens'
   },
@@ -52,7 +54,7 @@ export const plants: Plant[] = [
     difficulty: 1,
     light: 'light',
     water: 'water',
-    dew: true,
+    dew: 'xx',
     propagation: 'propagation',
     slug: 'epipremnum-golden'
   },
@@ -65,24 +67,28 @@ export const plants: Plant[] = [
     difficulty: 1,
     light: 'light',
     water: 'water',
-    dew: true,
+    dew: 'xx',
     propagation: 'propagation',
     slug: 'scindapsus-pictus-exotica'
   },
   {
     id: 6,
     name: 'Syngonium Pixie',
-    desctiption: 'Lorem ipsum',
+    slug: 'syngonium-pixie',
     image: 'https://source.unsplash.com/random/500x500?syngonium',
-    hydroponics: true,
+    desctiption: 'Lorem ipsum',
+
     difficulty: 1,
     light: 'light',
+    purifyAir: true,
+    petFriendly: false,
+
     water: 'water',
-    dew: true,
-    propagation: 'propagation',
+    dew: 'Vyžaduje rosení listů',
+    hydroponics: true,
+    propagation: 'Řízky',
     commonProblems:
-      'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky',
-    slug: 'syngonium-pixie'
+      'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky'
   },
   {
     id: 7,
@@ -93,7 +99,7 @@ export const plants: Plant[] = [
     difficulty: 1,
     light: 'light',
     water: 'water',
-    dew: true,
+    dew: 'xx',
     propagation: 'propagation',
     slug: 'zamioculcas-zamiifolia'
   },
@@ -106,7 +112,7 @@ export const plants: Plant[] = [
     difficulty: 1,
     light: 'light',
     water: 'water',
-    dew: true,
+    dew: 'xx',
     propagation: 'propagation',
     slug: 'calathea-orbifolia'
   },
@@ -119,7 +125,7 @@ export const plants: Plant[] = [
     difficulty: 1,
     light: 'light',
     water: 'water',
-    dew: true,
+    dew: 'xx',
     propagation: 'propagation',
     slug: 'marantha-leuconeura-fascinator'
   }
