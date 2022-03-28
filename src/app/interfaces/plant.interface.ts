@@ -4,11 +4,12 @@ export interface Plant {
   image: string;
   desctiption: string;
   hydroponics: boolean;
-  difficulty: number;
-  light: string;
   water: string;
   dew: boolean;
   propagation: string;
-  common_problems?: string;
+  commonProblems?: string;
+  light: string;
+  petFriendly?: boolean;
+  difficulty: number;
   slug: string;
 }

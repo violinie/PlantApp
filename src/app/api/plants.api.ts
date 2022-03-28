@@ -8,11 +8,12 @@ export const plants: Plant[] = [
       'Rod rostlin z čeledi árónovité. Jsou to vesměs mohutné liány, vyskytující se výhradně v tropické Americe. Většina druhů má rozměrné, charakteristicky děrované listy. Květy jsou uspořádané do palice s toulcem a jsou opylovány hmyzem. Plodem jsou bobule spojené do palicovitého plodenství. Rod obsahuje asi 40 druhů a je rozšířen ve vlhkých tropech od Mexika po Brazílii. Nejvíce druhů roste v horských pralesích Střední Ameriky. Monstery rostou zpravidla jako poloepifyty na kmenech stromů. Mladé semenáčky mají zajímavá přizpůsobení, umožňující jim nalézt vhodnou oporu pro další růst.',
     image: 'https://source.unsplash.com/random/500x500?monstera',
     hydroponics: true,
-    difficulty: 1,
+    difficulty: 2,
     light: 'light',
-    water: 'water',
+    water: 'Po úplném proschnutí',
     dew: true,
-    propagation: 'propagation',
+    propagation: 'Řízky',
+    petFriendly: false,
     slug: 'monstera'
   },
   {
@@ -78,7 +79,7 @@ export const plants: Plant[] = [
     water: 'water',
     dew: true,
     propagation: 'propagation',
-    common_problems:
+    commonProblems:
       'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky',
     slug: 'syngonium-pixie'
   },
