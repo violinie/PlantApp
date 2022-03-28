@@ -16,7 +16,7 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
-$black: #2c2c2c !default;
+$black: #000 !default;
 // scss-docs-end gray-color-variables
 
 // fusv-disable
@@ -383,7 +383,9 @@ $spacers: (
   2: $spacer * 0.5,
   3: $spacer,
   4: $spacer * 1.5,
-  5: $spacer * 3
+  5: $spacer * 3,
+  6: $spacer * 6,
+  7: $spacer * 7
 ) !default;
 
 $negative-spacers: if(
