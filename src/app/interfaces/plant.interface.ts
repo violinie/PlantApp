@@ -9,6 +9,7 @@ export interface Plant {
   propagation: string;
   commonProblems?: string;
   light: string;
+  purifyAir?: boolean;
   petFriendly?: boolean;
   difficulty: number;
   slug: string;

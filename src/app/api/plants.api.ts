@@ -9,12 +9,13 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?monstera',
     hydroponics: true,
     difficulty: 2,
-    light: 'light',
+    light: 'Rozptýlené světlo, maximálně mírný polostín',
     water: 'Po úplném proschnutí',
     dew: true,
     propagation: 'Řízky',
+    purifyAir: true,
     petFriendly: false,
-    slug: 'monstera'
+    slug: 'monstera-deliciosa'
   },
   {
     id: 2,

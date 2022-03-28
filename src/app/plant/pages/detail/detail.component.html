@@ -9,7 +9,7 @@
         <h2>Světlo:</h2><span>{{ plant?.light }}</span>
       </div>
       <div class="py-1 d-flex gap-2">
-        <h2>Čistí vzduch:</h2><span></span>
+        <h2>Čistí vzduch:</h2><span>{{ plant?.purifyAir }}</span>
       </div>
       <div *ngIf="plant?.petFriendly!" class="py-1 d-flex gap-2">
         <h2>Vhodná ke zvířatům: </h2><span>{{ plant?.petFriendly}}</span>
