@@ -11,13 +11,15 @@ import {
   faTint
 } from '@fortawesome/free-solid-svg-icons';
 import { plants } from 'src/app/api/plants.api';
-import { Plant } from 'src/app/interfaces/plant.interface';
+import { Difficulty, Plant } from 'src/app/interfaces/plant.interface';
 
 @Component({
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  public Difficulty = Difficulty;
+
   faSun = faSun;
   faLungs = faLungs;
   faPaw = faPaw;

@@ -1,4 +1,4 @@
-import { Plant } from '../interfaces/plant.interface';
+import { Difficulty, Plant } from '../interfaces/plant.interface';
 
 export const plants: Plant[] = [
   {
@@ -8,55 +8,59 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?monstera',
     desctiption:
       'Rod rostlin z čeledi árónovité. Jsou to vesměs mohutné liány, vyskytující se výhradně v tropické Americe. Většina druhů má rozměrné, charakteristicky děrované listy. Květy jsou uspořádané do palice s toulcem a jsou opylovány hmyzem. Plodem jsou bobule spojené do palicovitého plodenství. Rod obsahuje asi 40 druhů a je rozšířen ve vlhkých tropech od Mexika po Brazílii. Nejvíce druhů roste v horských pralesích Střední Ameriky. Monstery rostou zpravidla jako poloepifyty na kmenech stromů. Mladé semenáčky mají zajímavá přizpůsobení, umožňující jim nalézt vhodnou oporu pro další růst.',
-
-    difficulty: 2,
-    light: 'Rozptýlené světlo, maximálně mírný polostín',
+    difficulty: Difficulty.medium,
+    light: 'light',
     purifyAir: true,
     petFriendly: false,
-
     hydroponics: true,
     water: 'Po úplném proschnutí',
-    dew: 'Větší',
-    propagation: 'Řízky'
+    dew: 'may',
+    propagation: 'stem-cut'
   },
   {
     id: 2,
     name: 'Alocasia wentii',
-    desctiption: 'Lorem ipsum',
+    slug: 'alocasia-wentii',
     image: 'https://source.unsplash.com/random/500x500?alocasia',
-    hydroponics: true,
-    difficulty: 1,
+    desctiption: 'Lorem',
+    difficulty: Difficulty.hard,
     light: 'light',
-    water: 'water',
-    dew: 'xx',
-    propagation: 'propagation',
-    slug: 'alocasia-wentii'
+    purifyAir: true,
+    petFriendly: false,
+    hydroponics: true,
+    water: 'Po úplném vyschnutí substrátu',
+    dew: 'yes',
+    propagation: 'dividing'
   },
   {
     id: 3,
     name: 'Philodendron scandens',
-    desctiption: 'Lorem ipsum',
+    slug: 'philodendron-scandens',
     image: 'https://source.unsplash.com/random/500x500?philodendron',
-    hydroponics: true,
-    difficulty: 1,
+    desctiption: 'Lorem',
+    difficulty: Difficulty.easy,
     light: 'light',
-    water: 'water',
-    dew: 'xx',
-    propagation: 'propagation',
-    slug: 'philodendron-scandens'
+    purifyAir: true,
+    petFriendly: false,
+    hydroponics: true,
+    water: 'Po vyschnutí substrátu, ideálně zespodu',
+    dew: 'may',
+    propagation: 'stem-cut'
   },
   {
     id: 4,
     name: 'Epipremnum Golden',
-    desctiption: 'Lorem ipsum',
+    slug: 'epipremnum-golden',
     image: 'https://source.unsplash.com/random/500x500?epipremnum',
-    hydroponics: true,
-    difficulty: 1,
+    desctiption: 'Lorem ipsum',
+    difficulty: Difficulty.easy,
     light: 'light',
+    purifyAir: true,
+    petFriendly: false,
+    hydroponics: true,
     water: 'water',
-    dew: 'xx',
-    propagation: 'propagation',
-    slug: 'epipremnum-golden'
+    dew: 'may',
+    propagation: 'stem-cut'
   },
   {
     id: 5,
@@ -64,11 +68,11 @@ export const plants: Plant[] = [
     desctiption: 'Lorem ipsum',
     image: 'https://source.unsplash.com/random/500x500?scindapsus',
     hydroponics: true,
-    difficulty: 1,
+    difficulty: Difficulty.easy,
     light: 'light',
     water: 'water',
-    dew: 'xx',
-    propagation: 'propagation',
+    dew: 'yes',
+    propagation: 'stem-cut',
     slug: 'scindapsus-pictus-exotica'
   },
   {
@@ -77,16 +81,14 @@ export const plants: Plant[] = [
     slug: 'syngonium-pixie',
     image: 'https://source.unsplash.com/random/500x500?syngonium',
     desctiption: 'Lorem ipsum',
-
-    difficulty: 1,
+    difficulty: Difficulty.easy,
     light: 'light',
     purifyAir: true,
     petFriendly: false,
-
     water: 'water',
-    dew: 'Vyžaduje rosení listů',
+    dew: 'yes',
     hydroponics: true,
-    propagation: 'Řízky',
+    propagation: 'stem-cut',
     commonProblems:
       'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky'
   },
@@ -96,37 +98,11 @@ export const plants: Plant[] = [
     desctiption: 'Lorem ipsum',
     image: 'https://source.unsplash.com/random/500x500?zamioculcas',
     hydroponics: true,
-    difficulty: 1,
+    difficulty: Difficulty.easy,
     light: 'light',
     water: 'water',
-    dew: 'xx',
-    propagation: 'propagation',
+    dew: 'may',
+    propagation: 'bulb',
     slug: 'zamioculcas-zamiifolia'
-  },
-  {
-    id: 8,
-    name: 'Calathea orbifolia',
-    desctiption: 'Lorem ipsum',
-    image: 'https://source.unsplash.com/random/500x500?calathea',
-    hydroponics: true,
-    difficulty: 1,
-    light: 'light',
-    water: 'water',
-    dew: 'xx',
-    propagation: 'propagation',
-    slug: 'calathea-orbifolia'
-  },
-  {
-    id: 9,
-    name: 'Marantha leuconeura Fascinator',
-    desctiption: 'Lorem ipsum',
-    image: 'https://source.unsplash.com/random/500x500?marantha',
-    hydroponics: true,
-    difficulty: 1,
-    light: 'light',
-    water: 'water',
-    dew: 'xx',
-    propagation: 'propagation',
-    slug: 'marantha-leuconeura-fascinator'
   }
 ];

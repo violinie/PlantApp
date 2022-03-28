@@ -3,7 +3,8 @@
     <img [src]="plant?.image" alt="" class="rounded img__plant" />
     <div class="card p-5 my-5">
       <div class="py-1 d-flex gap-2">
-        <h2>Náročnost:</h2><span>{{ plant?.difficulty }}</span>
+        <h2>Náročnost:</h2><span [class.text-success]="plant?.difficulty === Difficulty.easy"
+        >{{ plant?.difficulty }}</span>
       </div>
       <div class="py-1 d-flex gap-2">
         <h2>Světlo:</h2><span>{{ plant?.light }}</span>
@@ -12,7 +13,7 @@
         <h2>Čistí vzduch:</h2><span>{{ plant?.purifyAir ? 'Ano' : 'Ne'}}</span>
       </div>
       <div class="py-1 d-flex gap-2">
-        <h2>Vhodná ke zvířatům: </h2><span>{{ plant?.petFriendly ? 'Ano' : 'Ne'}}</span>
+        <h2>Nejedovatá: </h2><span>{{ plant?.petFriendly ? 'Ano' : 'Ne'}}</span>
       </div>
     </div>
   </div>
