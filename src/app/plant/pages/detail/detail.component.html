@@ -5,12 +5,26 @@
   <div class="col">
     <h1>{{ plant?.name }}</h1>
     <p>{{ plant?.desctiption }}</p>
-    <div>{{ plant?.hydroponics }}</div>
-    <div>{{ plant?.difficulty }}</div>
-    <div>{{ plant?.light }}</div>
-    <div>{{ plant?.water }}</div>
-    <div>{{ plant?.dew }}</div>
-    <div>{{ plant?.propagation }}</div>
-    <div>{{ plant?.common_problems }}</div>
+    <div>
+      <h2>Hydroponie: </h2><span>{{ plant?.hydroponics }}</span>
+    </div>
+      <div>
+      <h2>Náročnost: </h2><span>{{ plant?.difficulty }}</span>
+    </div>
+    <div>
+      <h2>Světlo: </h2><span>{{ plant?.light }}</span>
+    </div>
+    <div>
+      <h2>Voda: </h2><span>{{ plant?.water }}</span>
+    </div>
+    <div>
+      <h2>Vlkost: </h2><span>{{ plant?.dew }}</span>
+    </div>
+    <div>
+      <h2>Množení</h2><span>{{ plant?.propagation }}</span>
+    </div>
+    <div *ngIf="plant?.common_problems!">
+      <h2>Časté problémy: </h2><span>{{ plant?.common_problems }}</span>
+    </div>
   </div>
 </div>

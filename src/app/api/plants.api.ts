@@ -12,7 +12,6 @@ export const plants: Plant[] = [
     water: 'water',
     dew: true,
     propagation: 'propagation',
-    common_problems: 'common_problems',
     slug: 'monstera'
   },
   {
@@ -22,11 +21,10 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?alocasia',
     hydroponics: true,
     difficulty: 1,
-    light: 'd',
-    water: 'd',
+    light: 'light',
+    water: 'water',
     dew: true,
-    propagation: 'x',
-    common_problems: 'd',
+    propagation: 'propagation',
     slug: 'alocasia-wentii'
   },
   {
@@ -36,11 +34,10 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?philodendron',
     hydroponics: true,
     difficulty: 1,
-    light: 'd',
-    water: 'd',
+    light: 'light',
+    water: 'water',
     dew: true,
-    propagation: 'x',
-    common_problems: 'd',
+    propagation: 'propagation',
     slug: 'philodendron-scandens'
   },
   {
@@ -50,11 +47,10 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?epipremnum',
     hydroponics: true,
     difficulty: 1,
-    light: 'd',
-    water: 'd',
+    light: 'light',
+    water: 'water',
     dew: true,
-    propagation: 'x',
-    common_problems: 'd',
+    propagation: 'propagation',
     slug: 'epipremnum-golden'
   },
   {
@@ -64,11 +60,10 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?scindapsus',
     hydroponics: true,
     difficulty: 1,
-    light: 'd',
-    water: 'd',
+    light: 'light',
+    water: 'water',
     dew: true,
-    propagation: 'x',
-    common_problems: 'd',
+    propagation: 'propagation',
     slug: 'scindapsus-pictus-exotica'
   },
   {
@@ -78,11 +73,12 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?syngonium',
     hydroponics: true,
     difficulty: 1,
-    light: 'd',
-    water: 'd',
+    light: 'light',
+    water: 'water',
     dew: true,
-    propagation: 'x',
-    common_problems: 'd',
+    propagation: 'propagation',
+    common_problems:
+      'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky',
     slug: 'syngonium-pixie'
   },
   {
@@ -92,11 +88,10 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?zamioculcas',
     hydroponics: true,
     difficulty: 1,
-    light: 'd',
-    water: 'd',
+    light: 'light',
+    water: 'water',
     dew: true,
-    propagation: 'x',
-    common_problems: 'd',
+    propagation: 'propagation',
     slug: 'zamioculcas-zamiifolia'
   },
   {
@@ -106,11 +101,10 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?calathea',
     hydroponics: true,
     difficulty: 1,
-    light: 'd',
-    water: 'd',
+    light: 'light',
+    water: 'water',
     dew: true,
-    propagation: 'x',
-    common_problems: 'd',
+    propagation: 'propagation',
     slug: 'calathea-orbifolia'
   },
   {
@@ -120,11 +114,10 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?marantha',
     hydroponics: true,
     difficulty: 1,
-    light: 'd',
-    water: 'd',
+    light: 'light',
+    water: 'water',
     dew: true,
-    propagation: 'x',
-    common_problems: 'd',
+    propagation: 'propagation',
     slug: 'marantha-leuconeura-fascinator'
   }
 ];
