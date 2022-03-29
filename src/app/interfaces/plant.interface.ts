@@ -14,14 +14,17 @@ export interface Plant {
   propagation: Propagation;
   commonProblems?: string;
   purpose?: Purpose;
-  species?: Species;
+  species: Species;
 }
 
 export type Species =
-  | 'alocasia'
-  | 'epipremnum-scindapsus'
-  | 'peperomia'
-  | 'ficus';
+  | 'Monstera'
+  | 'Alocasia'
+  | 'Philodentron'
+  | 'Epipremnum-scindapsus'
+  | 'Syngonium'
+  | 'Peperomia'
+  | 'Ficus';
 
 export type Purpose =
   // | 'purifyAir'

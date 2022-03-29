@@ -23,7 +23,8 @@ export const plants: Plant[] = [
     water: Water.extreme,
     dew: Dew.yes,
     propagation: Propagation.topCut,
-    purpose: 'climbing'
+    purpose: 'climbing',
+    species: 'Monstera'
   },
   {
     id: 2,
@@ -38,7 +39,8 @@ export const plants: Plant[] = [
     hydroponics: true,
     water: Water.little,
     dew: Dew.no,
-    propagation: Propagation.dividing
+    propagation: Propagation.dividing,
+    species: 'Alocasia'
   },
   {
     id: 3,
@@ -53,7 +55,8 @@ export const plants: Plant[] = [
     hydroponics: true,
     water: Water.lot,
     dew: Dew.yes,
-    propagation: Propagation.stemcut
+    propagation: Propagation.stemcut,
+    species: 'Philodentron'
   },
   {
     id: 4,
@@ -69,7 +72,8 @@ export const plants: Plant[] = [
     water: Water.medium,
     dew: Dew.yes,
     propagation: Propagation.dividing,
-    purpose: 'climbing'
+    purpose: 'climbing',
+    species: 'Epipremnum-scindapsus'
   },
   {
     id: 5,
@@ -83,7 +87,8 @@ export const plants: Plant[] = [
     water: Water.little,
     dew: Dew.no,
     propagation: Propagation.stemcut,
-    purpose: 'climbing'
+    purpose: 'climbing',
+    species: 'Epipremnum-scindapsus'
   },
   {
     id: 6,
@@ -100,19 +105,21 @@ export const plants: Plant[] = [
     hydroponics: true,
     propagation: Propagation.topCut,
     commonProblems:
-      'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky'
+      'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky',
+    species: 'Syngonium'
   },
   {
     id: 7,
-    name: 'Zamioculcas zamiifolia',
+    name: 'Alocasia Black Velvet',
     desctiption: 'Lorem ipsum',
-    image: 'https://source.unsplash.com/random/500x500?zamioculcas',
+    image: 'https://source.unsplash.com/random/500x500?plant',
     hydroponics: true,
     difficulty: Difficulty.easy,
     light: Light.little,
     water: Water.little,
     dew: Dew.yes,
     propagation: Propagation.topCut,
-    slug: 'zamioculcas-zamiifolia'
+    slug: 'zamioculcas-zamiifolia',
+    species: 'Alocasia'
   }
 ];
