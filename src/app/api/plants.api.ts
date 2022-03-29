@@ -1,4 +1,11 @@
-import { Difficulty, Plant } from '../interfaces/plant.interface';
+import {
+  Dew,
+  Difficulty,
+  Light,
+  Plant,
+  Propagation,
+  Water
+} from '../interfaces/plant.interface';
 
 export const plants: Plant[] = [
   {
@@ -8,14 +15,15 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?monstera',
     desctiption:
       'Rod rostlin z čeledi árónovité. Jsou to vesměs mohutné liány, vyskytující se výhradně v tropické Americe. Většina druhů má rozměrné, charakteristicky děrované listy. Květy jsou uspořádané do palice s toulcem a jsou opylovány hmyzem. Plodem jsou bobule spojené do palicovitého plodenství. Rod obsahuje asi 40 druhů a je rozšířen ve vlhkých tropech od Mexika po Brazílii. Nejvíce druhů roste v horských pralesích Střední Ameriky. Monstery rostou zpravidla jako poloepifyty na kmenech stromů. Mladé semenáčky mají zajímavá přizpůsobení, umožňující jim nalézt vhodnou oporu pro další růst.',
-    difficulty: Difficulty.medium,
-    light: 'light',
+    difficulty: Difficulty.easy,
+    light: Light.little,
     purifyAir: true,
     petFriendly: false,
     hydroponics: true,
-    water: 'Po úplném proschnutí',
-    dew: 'may',
-    propagation: 'stem-cut'
+    water: Water.extreme,
+    dew: Dew.yes,
+    propagation: Propagation.topCut,
+    purpose: 'climbing'
   },
   {
     id: 2,
@@ -24,13 +32,13 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?alocasia',
     desctiption: 'Lorem',
     difficulty: Difficulty.hard,
-    light: 'light',
+    light: Light.little,
     purifyAir: true,
     petFriendly: false,
     hydroponics: true,
-    water: 'Po úplném vyschnutí substrátu',
-    dew: 'yes',
-    propagation: 'dividing'
+    water: Water.little,
+    dew: Dew.no,
+    propagation: Propagation.dividing
   },
   {
     id: 3,
@@ -39,13 +47,13 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?philodendron',
     desctiption: 'Lorem',
     difficulty: Difficulty.easy,
-    light: 'light',
+    light: Light.normal,
     purifyAir: true,
     petFriendly: false,
     hydroponics: true,
-    water: 'Po vyschnutí substrátu, ideálně zespodu',
-    dew: 'may',
-    propagation: 'stem-cut'
+    water: Water.lot,
+    dew: Dew.yes,
+    propagation: Propagation.stemcut
   },
   {
     id: 4,
@@ -54,26 +62,28 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?epipremnum',
     desctiption: 'Lorem ipsum',
     difficulty: Difficulty.easy,
-    light: 'light',
+    light: Light.little,
     purifyAir: true,
     petFriendly: false,
     hydroponics: true,
-    water: 'water',
-    dew: 'may',
-    propagation: 'stem-cut'
+    water: Water.medium,
+    dew: Dew.yes,
+    propagation: Propagation.dividing,
+    purpose: 'climbing'
   },
   {
     id: 5,
     name: 'Scindapsus pictus Exotica',
+    slug: 'scindapsus-pictus-exotica',
     desctiption: 'Lorem ipsum',
     image: 'https://source.unsplash.com/random/500x500?scindapsus',
     hydroponics: true,
     difficulty: Difficulty.easy,
-    light: 'light',
-    water: 'water',
-    dew: 'yes',
-    propagation: 'stem-cut',
-    slug: 'scindapsus-pictus-exotica'
+    light: Light.little,
+    water: Water.little,
+    dew: Dew.no,
+    propagation: Propagation.stemcut,
+    purpose: 'climbing'
   },
   {
     id: 6,
@@ -82,13 +92,13 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?syngonium',
     desctiption: 'Lorem ipsum',
     difficulty: Difficulty.easy,
-    light: 'light',
+    light: Light.normal,
     purifyAir: true,
     petFriendly: false,
-    water: 'water',
-    dew: 'yes',
+    water: Water.medium,
+    dew: Dew.yes,
     hydroponics: true,
-    propagation: 'stem-cut',
+    propagation: Propagation.topCut,
     commonProblems:
       'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky'
   },
@@ -99,10 +109,10 @@ export const plants: Plant[] = [
     image: 'https://source.unsplash.com/random/500x500?zamioculcas',
     hydroponics: true,
     difficulty: Difficulty.easy,
-    light: 'light',
-    water: 'water',
-    dew: 'may',
-    propagation: 'bulb',
+    light: Light.little,
+    water: Water.little,
+    dew: Dew.yes,
+    propagation: Propagation.topCut,
     slug: 'zamioculcas-zamiifolia'
   }
 ];
