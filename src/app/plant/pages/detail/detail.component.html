@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col">
     <img [src]="plant?.image" alt="" class="rounded img__plant" />
-    <app-filtered></app-filtered>
+    <app-filtered [plant]="plant"></app-filtered>
   </div>
   <div class="col">
     <h1>{{ plant?.name }}</h1>

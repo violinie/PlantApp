@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit
+} from '@angular/core';
 import { Plant } from 'src/app/interfaces/plant.interface';
 
 @Component({
@@ -8,9 +13,7 @@ import { Plant } from 'src/app/interfaces/plant.interface';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilteredComponent implements OnInit {
-  public plant: Plant | undefined;
-
-  constructor() {}
+  @Input() public plant: Plant | undefined;
 
   ngOnInit(): void {}
 }

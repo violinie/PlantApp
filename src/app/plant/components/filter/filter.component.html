@@ -1,0 +1,13 @@
+<div class="card p-4">filter works!
+  <div class="mb-3">
+    <ng-select
+    [items]="people$ | async"
+    [multiple]="true"
+    [closeOnSelect]="false"
+    [searchable]="false"
+    bindLabel="name"
+    placeholder="Select people"
+    [(ngModel)]="selectedPeople">
+</ng-select>
+  </div>
+</div>
