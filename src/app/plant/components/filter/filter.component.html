@@ -1,13 +1,27 @@
-<div class="card p-4">filter works!
+<div class="card p-4">
   <div class="mb-3">
+    Druh
     <ng-select
-    [items]="people$ | async"
-    [multiple]="true"
-    [closeOnSelect]="false"
-    [searchable]="false"
-    bindLabel="name"
-    placeholder="Select people"
-    [(ngModel)]="selectedPeople">
+      [items]="plants"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      [searchable]="false"
+      bindLabel="species"
+      placeholder="Select"
+      [(ngModel)]="selectedPlants">
+    </ng-select>
+
+    <ng-select [items]="people$ | async"
+           bindLabel="species"
+           [addTag]="true"
+           [multiple]="true"
+           [hideSelected]="true"
+           [trackByFn]="trackByFn"
+           [minTermLength]="2"
+           [loading]="peopleLoading"
+           typeToSearchText="Please enter 2 or more characters"
+           [typeahead]="peopleInput$"
+           [(ngModel)]="selectedPlants">
 </ng-select>
   </div>
 </div>
