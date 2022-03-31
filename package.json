@@ -60,8 +60,5 @@
     "*.{js,json,css,scss,less,md,ts,html,component.html}": [
       "prettier --write"
     ]
-  },
-  "engines": {
-    "node": ">=16 <18"
   }
 }
