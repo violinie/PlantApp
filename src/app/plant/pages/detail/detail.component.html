@@ -1,12 +1,11 @@
 <div class="row">
   <div class="col">
     <img [src]="plant?.image" alt="" class="rounded img__plant"/>
-    <app-filtered [plant]="plant"></app-filtered>
   </div>
   <div class="col">
     <h1>{{ plant?.name }}</h1>
     <p>{{ plant?.desctiption }}</p>
-
+    <app-filtered [plant]="plant"></app-filtered>
     <div class="py-3 list__item d-flex gap-2">
       <fa-icon [icon]="faTint"></fa-icon>
       <div>

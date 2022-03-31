@@ -3,11 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import {
   faCloudRain,
   faExclamationTriangle,
-  faLungs,
   faMehBlank,
-  faPaw,
   faSeedling,
-  faSun,
   faTint
 } from '@fortawesome/free-solid-svg-icons';
 import { plants } from 'src/app/api/plants.api';
@@ -19,10 +16,6 @@ import { Difficulty, Plant } from 'src/app/interfaces/plant.interface';
 })
 export class DetailComponent implements OnInit {
   public Difficulty = Difficulty;
-
-  faSun = faSun;
-  faLungs = faLungs;
-  faPaw = faPaw;
 
   faTint = faTint;
   faCloudRain = faCloudRain;

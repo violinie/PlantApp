@@ -1,14 +1,14 @@
-<div class="card p-5 my-5">
-  <div class="py-1 d-flex gap-2">
-    <h2>Náročnost:</h2><span>{{ plant?.difficulty }}</span>
+<div class="my-5 d-flex gap-3">
+  <div class="card flex-row gap-2 p-2">
+    <span>{{ plant?.difficulty }}</span>
   </div>
-  <div class="py-1 d-flex gap-2">
-    <h2>Světlo:</h2><span>{{ plant?.light }}</span>
+  <!-- <div class="card p-2">
+    <fa-icon [icon]="faSun"></fa-icon><span>{{ plant?.light }}</span>
+  </div> -->
+  <div *ngIf="plant?.purifyAir" class="card flex-row gap-2 p-2">
+    <span>Čistí vzduch</span>
   </div>
-  <div class="py-1 d-flex gap-2">
-    <h2>Čistí vzduch:</h2><span>{{ plant?.purifyAir ? 'Ano' : 'Ne'}}</span>
-  </div>
-  <div class="py-1 d-flex gap-2">
-    <h2>Nejedovatá: </h2><span>{{ plant?.petFriendly ? 'Ano' : 'Ne'}}</span>
+  <div *ngIf="plant?.petFriendly" class="card flex-row gap-2 p-2">
+   <span>Nejedovatá</span>
   </div>
 </div>

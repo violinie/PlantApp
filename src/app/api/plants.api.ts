@@ -31,11 +31,12 @@ export const plants: Plant[] = [
     name: 'Alocasia wentii',
     slug: 'alocasia-wentii',
     image: 'https://source.unsplash.com/random/600x600?alocasia',
-    desctiption: 'Lorem',
+    desctiption:
+      'Rod rostlin z čeledi árónovité (Araceae). Jsou to středně velké až mohutné byliny s tlustým podzemním oddenkem. Květy jsou jednopohlavné, uspořádané v palici s toulcem. Rod zahrnuje asi 60 až 70 druhů a je přirozeně rozšířen v tropech a subtropech Asie, Austrálie a Tichomoří. Tuto alokázii najdete také pod názvem sloní ucho a její listy jsou lesklé, na povrchu tmavě zelené a zespodu fialovo hnědé.',
     difficulty: Difficulty.hard,
     light: Light.little,
     purifyAir: true,
-    petFriendly: false,
+    petFriendly: true,
     hydroponics: true,
     water: Water.little,
     dew: Dew.no,
@@ -47,7 +48,8 @@ export const plants: Plant[] = [
     name: 'Philodendron scandens',
     slug: 'philodendron-scandens',
     image: 'https://source.unsplash.com/random/600x600?philodendron',
-    desctiption: 'Lorem',
+    desctiption:
+      'Rod rostlin z čeledi árónovité. Jsou to malé až robustní, vytrvalé byliny s celistvými nebo členěnými, řapíkatými listy a drobnými květy v palicovitých květenstvích obalených toulcem. Plodem je bobule. V přírodě rostou jako epifyty a poloepifyty v korunách stromů, ale i na skalách, pevné zemi a v bažinách. Mají zajímavý způsob opylování, spojený s tvorbou tepla. Rod zahrnuje asi 500 druhů a je rozšířen výhradně v tropické Americe.',
     difficulty: Difficulty.easy,
     light: Light.normal,
     purifyAir: true,
@@ -63,7 +65,8 @@ export const plants: Plant[] = [
     name: 'Epipremnum Golden',
     slug: 'epipremnum-golden',
     image: 'https://source.unsplash.com/random/600x600?epipremnum',
-    desctiption: 'Lorem ipsum',
+    desctiption:
+      'Rod rostlin z čeledi áronovitých (Araceae). Zahrnuje asi 20 druhů mohutných lián, rozšířených v tropické Asii a Austrálii. Mladé formy šplhavnice zlaté s panašovanými listy se pěstují jako pokojové rostliny, často pod nesprávným názvem potos nebo scindapsus.',
     difficulty: Difficulty.easy,
     light: Light.little,
     purifyAir: true,
@@ -79,7 +82,8 @@ export const plants: Plant[] = [
     id: 5,
     name: 'Scindapsus pictus Exotica',
     slug: 'scindapsus-pictus-exotica',
-    desctiption: 'Lorem ipsum',
+    desctiption:
+      'Pochází z Indonésie, Malajsie a Šalamounovy ostrovy. Tato popínavá, velmi rychle rostoucí rostlina s listy se srdcovitým tvarem, které jsou posety bílými skrvrnkami, patří k liánám a pěstuje se tak při opoře nebo v závěsu.',
     image: 'https://source.unsplash.com/random/600x600?scindapsus',
     hydroponics: true,
     difficulty: Difficulty.easy,
@@ -95,7 +99,8 @@ export const plants: Plant[] = [
     name: 'Syngonium Pixie',
     slug: 'syngonium-pixie',
     image: 'https://source.unsplash.com/random/600x600?syngonium',
-    desctiption: 'Lorem ipsum',
+    desctiption:
+      'Tato popínavá rostlina má listy leskle zelené nebo se zelenobílým mramorováním. Vytváří vzdušné kořeny. Roste velice rychle. V mládí je rostlina kompaktní a nepotřebuje k růstu oporu. Během růstu rostlina mění listy z jednoduchých na laločnaté, vytváří popínavé stonky, které se samy neudrží vzpřímené a potřebují oporu.',
     difficulty: Difficulty.easy,
     light: Light.normal,
     purifyAir: true,
@@ -111,7 +116,8 @@ export const plants: Plant[] = [
   {
     id: 7,
     name: 'Alocasia Black Velvet',
-    desctiption: 'Lorem ipsum',
+    desctiption:
+      'Alokázie patří mezi áronovité rostliny vyrůstající z hlízovitých oddenků. Vyznačují se velkými šípovitými až srdčitými listy, které rostou na dlouhých řapících. Listy alokázií jsou velmi zdobné, většinou s výrazným žebrováním a hladkými nebo zvlněnými okraji. Jsou to rostliny velmi náročné s vyššími požadavky na péči. Tento druh Alokázií je menšího vzrůstu s téměř černými listy ve tvaru srdce a jejich povrch vypadá jako samet protkaný bílým žilkováním. ',
     image: 'https://source.unsplash.com/random/600x600?plant',
     hydroponics: true,
     difficulty: Difficulty.easy,
