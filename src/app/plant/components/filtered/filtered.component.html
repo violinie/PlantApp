@@ -1,4 +1,4 @@
-<div class="my-5 d-flex gap-3">
+<div class="my-4 d-flex align-items-center flex-wrap gap-3">
   <div class="card flex-row gap-2 p-2">
     <span>{{ plant?.difficulty }}</span>
   </div>
@@ -6,7 +6,7 @@
     <fa-icon [icon]="faSun"></fa-icon><span>{{ plant?.light }}</span>
   </div> -->
   <div *ngIf="plant?.purifyAir" class="card flex-row gap-2 p-2">
-    <span>Čistí vzduch</span>
+    <span>Čistí&nbsp;vzduch</span>
   </div>
   <div *ngIf="plant?.petFriendly" class="card flex-row gap-2 p-2">
    <span>Nejedovatá</span>
