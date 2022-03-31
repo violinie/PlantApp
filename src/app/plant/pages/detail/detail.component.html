@@ -38,7 +38,8 @@
       <fa-icon [icon]="faExclamationTriangle"></fa-icon>
       <div>
         <h2>Časté problémy</h2>
-        <div>{{ plant?.commonProblems | json }}</div>
+
+        <div *ngFor="let commonProblems of plant?.commonProblems">{{ commonProblems.symptom + commonProblems.causes }}</div>
       </div>
     </div>
   </div>

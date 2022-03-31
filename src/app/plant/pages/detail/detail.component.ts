@@ -24,6 +24,7 @@ export class DetailComponent implements OnInit {
   faExclamationTriangle = faExclamationTriangle;
   // create "let" plant for this component
   public plant: Plant | undefined;
+  public plants: Plant[] = plants;
 
   constructor(private route: ActivatedRoute) {}
 

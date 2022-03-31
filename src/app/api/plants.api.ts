@@ -111,7 +111,7 @@ export const plants: Plant[] = [
     propagation: Propagation.topCut,
     commonProblems: [
       {
-        symptom: 'Hnědnutí konců listů:',
+        symptom: 'Hnědnutí konců listů: ',
         causes: ['malá vzdušná vlhkost', 'málo vody']
       }
     ],
