@@ -12,9 +12,14 @@ export interface Plant {
   water: Water;
   dew: Dew;
   propagation: Propagation;
-  commonProblems?: string;
+  commonProblems?: CommonProblem[];
   purpose?: Purpose;
   species: Species;
+}
+
+export interface CommonProblem {
+  symptom: string;
+  causes: string[];
 }
 
 export type Species =

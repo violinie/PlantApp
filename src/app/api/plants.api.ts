@@ -109,8 +109,13 @@ export const plants: Plant[] = [
     dew: Dew.yes,
     hydroponics: true,
     propagation: Propagation.topCut,
-    commonProblems:
-      'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky',
+    commonProblems: [
+      {
+        symptom: 'Hnědnutí konců listů:',
+        causes: ['malá vzdušná vlhkost', 'málo vody']
+      }
+    ],
+    // 'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky',
     species: 'Syngonium'
   },
   {
