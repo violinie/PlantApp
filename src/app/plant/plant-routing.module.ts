@@ -5,11 +5,11 @@ import { PlantComponent } from './plant.component';
 
 const routes: Routes = [
   { path: '', component: PlantComponent },
-{ path: ':id', component: DetailComponent }
+  { path: ':id', component: DetailComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PlantRoutingModule { }
+export class PlantRoutingModule {}
