@@ -8,13 +8,15 @@ import { FilteredComponent } from './components/filtered/filtered.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { PlantRoutingModule } from './plant-routing.module';
 import { PlantComponent } from './plant.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
     PlantComponent,
     DetailComponent,
     FilteredComponent,
-    FilterComponent
+    FilterComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     CommonModule,

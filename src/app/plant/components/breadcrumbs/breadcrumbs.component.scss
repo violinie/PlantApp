@@ -1,0 +1,15 @@
+.breadcrumbs {
+  margin-bottom: 5rem;
+}
+
+li {
+  &::after {
+    content: '>';
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &:last-child::after {
+    content: none;
+  }
+}
