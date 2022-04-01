@@ -11,7 +11,7 @@
       [(ngModel)]="selectedPlants">
     </ng-select>
 
-    <ng-select [items]="people$ | async"
+    <!-- <ng-select [items]="people$ | async"
            bindLabel="species"
            [addTag]="true"
            [multiple]="true"
@@ -22,6 +22,16 @@
            typeToSearchText="Please enter 2 or more characters"
            [typeahead]="peopleInput$"
            [(ngModel)]="selectedPlants">
-</ng-select>
+</ng-select> -->
+
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="petFriendly" (change)="onCheckboxChange($event)">
+  <label class="form-check-label" for="petFriendly">
+    <div>Není jedovatá</div>
+  </label>
+</div>
+
+
   </div>
 </div>

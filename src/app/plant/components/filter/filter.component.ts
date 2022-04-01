@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   catchError,
   concat,
@@ -23,14 +24,23 @@ export class FilterComponent implements OnInit {
   public plants: any[] = [];
   selectedPlants = [{ species: 'Všechny' }];
 
-  constructor(private filterService: DataService) {}
+  constructor(private filterService: DataService, private router: Router) {}
 
   ngOnInit() {
     this.filterService.getPlants().subscribe(x => {
-      console.log('filterrr', x);
       this.plants = x;
     });
     this.loadPlants();
+  }
+
+  onCheckboxChange(evt: any) {
+    console.log(evt.target.checked);
+    const checked = evt.target.checked;
+    const queryParams = checked ? { petFriendly: true } : {};
+
+    this.router.navigate(['plant'], {
+      queryParams
+    });
   }
 
   clearModel() {
