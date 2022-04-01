@@ -1,10 +1,10 @@
 <section class="row g-5">
   <h1>Všechny rostliny</h1>
   <p class="my-3">In ultricies fermentum aliquet. Pellentesque dui magna, condimentum non ullamcorper at, cursus in sem. Nunc condimentum, purus ac enenatis commodo libero, am auctor porta tortor, nec consequat nibh finibus a. </p>
-  <app-filter class="col-3"></app-filter>
-  <div class="col-9">
-    <div class="row g-4">
-   <figure class="col-4" *ngFor="let plant of plants">
+  <app-filter class="col-md-3"></app-filter>
+  <div class="col-md-9">
+    <div class="row">
+   <figure class="col-6 col-md-4" *ngFor="let plant of plants">
       <app-card [plant]="plant" class="card"></app-card>
    </figure>
   </div>

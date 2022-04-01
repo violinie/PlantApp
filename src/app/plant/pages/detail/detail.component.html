@@ -1,8 +1,9 @@
+<app-breadcrumbs></app-breadcrumbs>
 <div class="row">
-  <div class="col">
-    <img [src]="plant?.image" alt="" class="rounded img__plant"/>
+  <div class="col-md-6 col-12">
+    <img [src]="plant?.image" alt="" class="rounded img__plant w-100"/>
   </div>
-  <div class="col">
+  <div class="col-md-6 col-12">
     <h1>{{ plant?.name }}</h1>
     <p>{{ plant?.desctiption }}</p>
     <app-filtered [plant]="plant"></app-filtered>
