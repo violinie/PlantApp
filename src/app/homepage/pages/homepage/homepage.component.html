@@ -1,6 +1,14 @@
+<section class="hero bg-dark text-center">
+  <h1>claim</h1>
+  <p>In ultricies fermentum aliquet. Pellentesque dui magna, condimentum non ullamcorper at, cursus in sem. </p>
+  <button class="btn btn-success px-5">button</button>
+</section>
 <!-- first 6 plants of all -->
-<section class="row row-cols-1 row-cols-md-3 g-4 my-5">
-  <div class="col" *ngFor="let plant of sliced">
-    <app-card [plant]="plant" class="card"></app-card>
+<section class="my-5">
+  <h2 class="my-4">Title 2</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let plant of sliced">
+      <app-card [plant]="plant" class="card"></app-card>
+    </div>
   </div>
 </section>
