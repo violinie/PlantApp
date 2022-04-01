@@ -58,6 +58,14 @@
 
 @import 'styles/ng-select';
 
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-image: url(./memphis-mini.png);
+}
+
 a {
   text-decoration: none;
 }
