@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   catchError,
   concat,
@@ -23,10 +23,18 @@ export class FilterComponent implements OnInit {
   public plants$!: Observable<any[]>;
   public plants: any[] = [];
   selectedPlants = [{ species: 'Všechny' }];
+  public checked: boolean = false;
 
-  constructor(private filterService: DataService, private router: Router) {}
+  constructor(
+    private filterService: DataService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    const checked = this.route.snapshot.queryParamMap.get('petFriendly');
+    this.checked = checked === 'true';
+    console.log(this.checked, checked);
     this.filterService.getPlants().subscribe(x => {
       this.plants = x;
     });
