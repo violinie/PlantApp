@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   catchError,
@@ -16,20 +16,38 @@ import { DataService } from './data.service';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
   public plants$!: Observable<any[]>;
   public plants: any[] = [];
   selectedPlants = [{ species: 'Všechny' }];
   public checked: boolean = false;
+  public selectedPlantIds: number[] = [];
 
   constructor(
     private filterService: DataService,
+    private cdr: ChangeDetectorRef,
     private router: Router,
     private route: ActivatedRoute
   ) {}
+
+  public addItem(plant: Plant) {
+    let selectedPlantIds = this.selectedPlantIds;
+    selectedPlantIds.push(plant.id);
+
+    this.selectedPlantIds = selectedPlantIds;
+    console.log('add', this.selectedPlantIds);
+    this.cdr.detectChanges();
+  }
+
+  public removeItem(plant: Plant) {
+    let selectedPlantIds = this.selectedPlantIds;
+    this.selectedPlantIds = selectedPlantIds.filter(id => {
+      console.log('remove', id, plant.id);
+      return id !== plant.id;
+    });
+  }
 
   ngOnInit() {
     const checked = this.route.snapshot.queryParamMap.get('petFriendly');

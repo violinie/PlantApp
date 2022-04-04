@@ -3,6 +3,8 @@
     Druh
     <ng-select
       [items]="plants"
+      (add)="addItem($event)"
+      (remove)="removeItem($event.value)"
       [multiple]="true"
       [closeOnSelect]="false"
       [searchable]="false"
@@ -10,7 +12,7 @@
       placeholder="Select"
       [(ngModel)]="selectedPlants">
     </ng-select>
-
+ {{ selectedPlantIds }}
     <!-- <ng-select [items]="people$ | async"
            bindLabel="species"
            [addTag]="true"
@@ -29,6 +31,12 @@
  <input class="form-check-input" type="checkbox" value="" id="petFriendly" (change)="onCheckboxChange($event)" [checked]="checked">
   <label class="form-check-label" for="petFriendly">
     <div>Není jedovatá</div>
+  </label>
+</div>
+<div class="form-check">
+ <input class="form-check-input" type="checkbox" value="" id="hydroponics" (change)="onCheckboxChange($event)" [checked]="checked">
+  <label class="form-check-label" for="hydroponics">
+    <div>Vhodná do hydroponie</div>
   </label>
 </div>
 
