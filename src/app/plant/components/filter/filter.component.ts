@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   catchError,
@@ -27,18 +27,14 @@ export class FilterComponent implements OnInit {
 
   constructor(
     private filterService: DataService,
-    private cdr: ChangeDetectorRef,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
-  public addItem(plant: Plant) {
-    let selectedPlantIds = this.selectedPlantIds;
-    selectedPlantIds.push(plant.id);
-
-    this.selectedPlantIds = selectedPlantIds;
+  public addItem(plant: Plant): void {
+    this.selectedPlantIds.push(plant.id);
+    this.selectedPlantIds = [...this.selectedPlantIds];
     console.log('add', this.selectedPlantIds);
-    this.cdr.detectChanges();
   }
 
   public removeItem(plant: Plant) {
