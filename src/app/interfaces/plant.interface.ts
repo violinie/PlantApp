@@ -14,22 +14,13 @@ export interface Plant {
   propagation: Propagation;
   commonProblems?: CommonProblem[];
   purpose?: Purpose;
-  species: Species;
+  species: number;
 }
 
 export interface CommonProblem {
   symptom: string;
   causes: string[];
 }
-
-export type Species =
-  | 'Monstera'
-  | 'Alocasia'
-  | 'Philodentron'
-  | 'Epipremnum-scindapsus'
-  | 'Syngonium'
-  | 'Peperomia'
-  | 'Ficus';
 
 export type Purpose =
   // | 'purifyAir'

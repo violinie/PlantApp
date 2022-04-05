@@ -2,13 +2,14 @@
   <div class="mb-3">
     Druh
     <ng-select
-      [items]="plants"
+      [items]="species"
       (add)="addItem($event)"
       (remove)="removeItem($event.value)"
       [multiple]="true"
       [closeOnSelect]="false"
       [searchable]="false"
-      bindLabel="species"
+      bindLabel="name"
+      bindValue="id"
       placeholder="Select"
       [(ngModel)]="selectedPlants">
     </ng-select>

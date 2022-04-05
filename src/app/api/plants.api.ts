@@ -6,6 +6,7 @@ import {
   Propagation,
   Water
 } from '../interfaces/plant.interface';
+// import { species } from './species.api';
 
 export const plants: Plant[] = [
   {
@@ -24,7 +25,7 @@ export const plants: Plant[] = [
     dew: Dew.yes,
     propagation: Propagation.topCut,
     purpose: 'climbing',
-    species: 'Monstera'
+    species: 1
   },
   {
     id: 2,
@@ -41,7 +42,7 @@ export const plants: Plant[] = [
     water: Water.little,
     dew: Dew.no,
     propagation: Propagation.dividing,
-    species: 'Alocasia'
+    species: 2
   },
   {
     id: 3,
@@ -58,7 +59,7 @@ export const plants: Plant[] = [
     water: Water.lot,
     dew: Dew.yes,
     propagation: Propagation.stemcut,
-    species: 'Philodentron'
+    species: 3
   },
   {
     id: 4,
@@ -76,7 +77,7 @@ export const plants: Plant[] = [
     dew: Dew.yes,
     propagation: Propagation.dividing,
     purpose: 'climbing',
-    species: 'Epipremnum-scindapsus'
+    species: 4
   },
   {
     id: 5,
@@ -92,7 +93,7 @@ export const plants: Plant[] = [
     dew: Dew.no,
     propagation: Propagation.stemcut,
     purpose: 'climbing',
-    species: 'Epipremnum-scindapsus'
+    species: 4
   },
   {
     id: 6,
@@ -116,7 +117,7 @@ export const plants: Plant[] = [
       }
     ],
     // 'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky',
-    species: 'Syngonium'
+    species: 5
   },
   {
     id: 7,
@@ -131,6 +132,6 @@ export const plants: Plant[] = [
     dew: Dew.yes,
     propagation: Propagation.topCut,
     slug: 'zamioculcas-zamiifolia',
-    species: 'Alocasia'
+    species: 2
   }
 ];

@@ -10,6 +10,7 @@ import {
   switchMap,
   tap
 } from 'rxjs';
+import { species } from 'src/app/api/species.api';
 import { Plant } from 'src/app/interfaces/plant.interface';
 import { DataService } from './data.service';
 
@@ -24,34 +25,42 @@ export class FilterComponent implements OnInit {
   selectedPlants = [{ species: 'Všechny' }];
   public checked: boolean = false;
   public selectedPlantIds: number[] = [];
+  public species = species;
 
   constructor(
     private filterService: DataService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   public addItem(plant: Plant): void {
     this.selectedPlantIds.push(plant.id);
     this.selectedPlantIds = [...this.selectedPlantIds];
+    const str = this.selectedPlantIds.join(',');
+    this.router.navigate(['/plant'], { queryParams: { species: str } });
+
     console.log('add', this.selectedPlantIds);
   }
 
   public removeItem(plant: Plant) {
     let selectedPlantIds = this.selectedPlantIds;
     this.selectedPlantIds = selectedPlantIds.filter(id => {
-      console.log('remove', id, plant.id);
       return id !== plant.id;
     });
+    const str = this.selectedPlantIds.join(',');
+    this.router.navigate(['/plant'], {
+      queryParams: { species: str }
+    });
+    console.log('remove', str);
   }
 
   ngOnInit() {
     const checked = this.route.snapshot.queryParamMap.get('petFriendly');
     this.checked = checked === 'true';
     console.log(this.checked, checked);
-    this.filterService.getPlants().subscribe(x => {
-      this.plants = x;
-    });
+    // this.filterService.getPlants().subscribe(x => {
+    //   this.plants = x;
+    // });
     this.loadPlants();
   }
 

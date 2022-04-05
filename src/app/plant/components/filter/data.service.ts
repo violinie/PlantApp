@@ -14,12 +14,12 @@ export class DataService {
   public getPlants(term: string = ''): Observable<Plant[]> {
     let items = plants;
 
-    if (term) {
-      items = items.filter(
-        x =>
-          x.species.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1
-      );
-    }
+    // if (term) {
+    //   items = items.filter(
+    //     x =>
+    //       x.species.indexOf(term.toLocaleLowerCase()) > -1
+    //   );
+    // }
 
     return of(items).pipe(delay(500));
   }
