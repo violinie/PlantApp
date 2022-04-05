@@ -58,6 +58,12 @@
 
 @import 'styles/ng-select';
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Roboto', sans-serif;
 }
