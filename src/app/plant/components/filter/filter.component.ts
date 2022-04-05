@@ -33,31 +33,32 @@ export class FilterComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  public addItem(plant: Plant): void {
-    this.selectedPlantIds.push(plant.id);
-    this.selectedPlantIds = [...this.selectedPlantIds];
-    const str = this.selectedPlantIds.join(',');
-    this.router.navigate(['/plant'], { queryParams: { species: str } });
-
-    console.log('add', this.selectedPlantIds);
-  }
-
-  public removeItem(plant: Plant) {
-    let selectedPlantIds = this.selectedPlantIds;
-    this.selectedPlantIds = selectedPlantIds.filter(id => {
-      return id !== plant.id;
-    });
+  private addQueryParams(ids: number[]): void {
+    this.selectedPlantIds = ids;
     const str = this.selectedPlantIds.join(',');
     this.router.navigate(['/plant'], {
-      queryParams: { species: str }
+      queryParams: { species: str ? str : null },
+      queryParamsHandling: 'merge'
     });
-    console.log('remove', str);
+    console.log(this.selectedPlantIds);
+  }
+
+  public addItem(plant: Plant): void {
+    this.selectedPlantIds.push(plant.id);
+    const selectedPlantIds = [...this.selectedPlantIds];
+    this.addQueryParams(selectedPlantIds);
+  }
+
+  public removeItem(plant: Plant): void {
+    const selectedPlantIds = this.selectedPlantIds.filter(id => {
+      return id !== plant.id;
+    });
+    this.addQueryParams(selectedPlantIds);
   }
 
   ngOnInit() {
     const checked = this.route.snapshot.queryParamMap.get('petFriendly');
     this.checked = checked === 'true';
-    console.log(this.checked, checked);
     // this.filterService.getPlants().subscribe(x => {
     //   this.plants = x;
     // });
@@ -65,13 +66,23 @@ export class FilterComponent implements OnInit {
   }
 
   onCheckboxChange(evt: any) {
-    console.log(evt.target.checked);
+    // NEW: toggle checkbox worked but now (when new select was created) it's broken :-( >> not anymore
     const checked = evt.target.checked;
-    const queryParams = checked ? { petFriendly: true } : {};
+    console.log(checked);
 
     this.router.navigate(['plant'], {
-      queryParams
+      queryParams: { petFriendly: checked ? true : null },
+      queryParamsHandling: 'merge'
     });
+  }
+
+  // HELP: filter plants by id (from species api) when click
+  onSelectClick() {
+    this.plants.filter(id => id === this.selectedPlantIds);
+    // console.log(
+    //   'wtf',
+    //   this.plants.filter(id => id === this.selectedPlantIds)
+    // );
   }
 
   clearModel() {

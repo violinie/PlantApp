@@ -16,15 +16,26 @@ export class PlantComponent {
 
   ngOnInit() {
     this.route.queryParamMap.subscribe(params => {
+      console.log('p', params);
+      let temp: string = '2';
+      const species = temp.split(',');
+      const a = this.filterSpecies(Number(species[0]));
+      console.log(a);
       if (params.get('petFriendly')) {
-        this.plants = this.filterPlants();
+        this.plants = this.filterBoolean();
       } else {
         this.plants = plants;
       }
     });
+
+    // HELP: display plants on species select
   }
 
-  private filterPlants(): Plant[] {
+  private filterSpecies(species: number): Plant[] {
+    return plants.filter(plant => plant.species === species);
+  }
+
+  private filterBoolean(): Plant[] {
     return plants.filter(plant => plant.petFriendly === true);
   }
 }
