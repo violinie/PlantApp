@@ -22,9 +22,8 @@ import { DataService } from './data.service';
 export class FilterComponent implements OnInit {
   public plants$!: Observable<any[]>;
   public plants: any[] = [];
-  selectedPlants = [{ species: 'Všechny' }];
+  selectedPlants = [];
   public checked: boolean = false;
-  public selectedPlantIds: number[] = [];
   public species = species;
 
   constructor(
@@ -34,26 +33,11 @@ export class FilterComponent implements OnInit {
   ) {}
 
   private addQueryParams(ids: number[]): void {
-    this.selectedPlantIds = ids;
-    const str = this.selectedPlantIds.join(',');
+    const str = ids.join(',');
     this.router.navigate(['/plant'], {
       queryParams: { species: str ? str : null },
       queryParamsHandling: 'merge'
     });
-    console.log(this.selectedPlantIds);
-  }
-
-  public addItem(plant: Plant): void {
-    this.selectedPlantIds.push(plant.id);
-    const selectedPlantIds = [...this.selectedPlantIds];
-    this.addQueryParams(selectedPlantIds);
-  }
-
-  public removeItem(plant: Plant): void {
-    const selectedPlantIds = this.selectedPlantIds.filter(id => {
-      return id !== plant.id;
-    });
-    this.addQueryParams(selectedPlantIds);
   }
 
   ngOnInit() {
@@ -66,7 +50,7 @@ export class FilterComponent implements OnInit {
   }
 
   onCheckboxChange(evt: any) {
-    // NEW: toggle checkbox worked but now (when new select was created) it's broken :-( >> not anymore
+    // toggle checkbox
     const checked = evt.target.checked;
     console.log(checked);
 
@@ -76,8 +60,28 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  onSelectClick() {
-    this.plants.filter(id => id === this.selectedPlantIds);
+  // public addItem(plant: Plant): void {
+  //   this.selectedPlantIds.push(plant.id);
+  //   const selectedPlantIds = [...this.selectedPlantIds];
+  //   this.addQueryParams(selectedPlantIds);
+  // }
+
+  // public removeItem(plant: Plant): void {
+  //   const selectedPlantIds = this.selectedPlantIds.filter(id => {
+  //     return id !== plant.id;
+  //   });
+  //   this.addQueryParams(selectedPlantIds);
+  // }
+
+  changeItems(plants: Plant[]) {
+    console.log('plants', plants);
+    const selectedPlantIds = plants.map(plant => plant.id);
+    this.addQueryParams(selectedPlantIds);
+  }
+
+  onReset() {
+    this.router.navigate(['plant'], {});
+    this.selectedPlants = [];
   }
 
   clearModel() {
@@ -85,7 +89,7 @@ export class FilterComponent implements OnInit {
   }
 
   changeModel() {
-    this.selectedPlants = [{ species: 'New Plant' }];
+    this.selectedPlants = [];
   }
 
   people$!: Observable<Plant[]>;
