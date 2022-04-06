@@ -76,13 +76,8 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  // HELP: filter plants by id (from species api) when click
   onSelectClick() {
     this.plants.filter(id => id === this.selectedPlantIds);
-    // console.log(
-    //   'wtf',
-    //   this.plants.filter(id => id === this.selectedPlantIds)
-    // );
   }
 
   clearModel() {

@@ -11,28 +11,31 @@ import { Plant } from '../interfaces/plant.interface';
 export class PlantComponent {
   // create variable plant for this component
   public plants: Plant[] = plants;
+  public plant: Plant | undefined;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.queryParamMap.subscribe(params => {
       console.log('p', params);
-      let temp: string = '2';
-      const species = temp.split(',');
-      const a = this.filterSpecies(Number(species[0]));
-      console.log(a);
-      if (params.get('petFriendly')) {
-        this.plants = this.filterBoolean();
+      if (params.get('species') || params.get('petFriendly')) {
+        let temp: string | null = params.get('species');
+        const species = temp?.split(',').map(Number);
+        console.log('spec', species, 'id', this.plant?.id);
+        this.plants = this.filterSpecies(species ? species : []);
       } else {
         this.plants = plants;
       }
+      // if (params.get('petFriendly')) {
+      //   this.plants = this.filterBoolean();
+      // } else {
+      //   this.plants = plants;
+      // }
     });
-
-    // HELP: display plants on species select
   }
 
-  private filterSpecies(species: number): Plant[] {
-    return plants.filter(plant => plant.species === species);
+  private filterSpecies(species: number[]): Plant[] {
+    return plants.filter(plant => species.includes(plant.species));
   }
 
   private filterBoolean(): Plant[] {
