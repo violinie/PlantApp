@@ -1,4 +1,4 @@
-<div class="card p-4">
+<div class="card p-4 mb-5">
   <div class="mb-3">
     Druh
     <ng-select
@@ -12,7 +12,7 @@
       placeholder="Select"
       [(ngModel)]="selectedPlants">
     </ng-select>
-    {{ selectedPlants | json }}
+    <!-- {{ selectedPlants | json }} -->
   </div>
       <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="petFriendly" (change)="onCheckboxChange($event)" [checked]="checked">
@@ -20,5 +20,6 @@
           <div>Není jedovatá</div>
         </label>
       </div>
-      <button (click)="onReset()">Resetovat filtry</button>
+      <a (click)="onReset()" class="text-primary w-40 mb-3 ms-auto" role="button">Resetovat filtry</a>
+
 </div>
