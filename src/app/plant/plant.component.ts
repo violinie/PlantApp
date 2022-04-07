@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { plants } from '../api/plants.api';
+import { plants as allPlants } from '../api/plants.api';
 import { Plant } from '../interfaces/plant.interface';
 
 @Component({
@@ -10,35 +10,37 @@ import { Plant } from '../interfaces/plant.interface';
 })
 export class PlantComponent {
   // create variable plant for this component
-  public plants: Plant[] = plants;
+  public plants: Plant[] = allPlants;
   public plant: Plant | undefined;
+  public readonly Array = Array;
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
       console.log('p', params);
-      if (params.get('species') || params.get('petFriendly')) {
+      let plants: Plant[] = allPlants;
+
+      if (params.get('species')) {
         let temp: string | null = params.get('species');
-        const species = temp?.split(',').map(Number);
-        console.log('spec', species, 'id', this.plant?.id);
-        this.plants = this.filterSpecies(species ? species : []);
-      } else {
-        this.plants = plants;
+        const speciesIds = temp?.split(',').map(Number);
+        plants = this.filterSpecies(speciesIds ? speciesIds : [], plants);
       }
-      // if (params.get('petFriendly')) {
-      //   this.plants = this.filterBoolean();
-      // } else {
-      //   this.plants = plants;
-      // }
+      console.log('select plants', plants);
+      if (params.get('petFriendly')) {
+        plants = this.filterBoolean(plants);
+      }
+      console.log('checkbox plants', plants);
+      this.plants = plants;
     });
   }
 
-  private filterSpecies(species: number[]): Plant[] {
+  private filterSpecies(species: number[], plants: Plant[]): Plant[] {
+    console.log('species', species, plants);
     return plants.filter(plant => species.includes(plant.species));
   }
 
-  private filterBoolean(): Plant[] {
+  private filterBoolean(plants: Plant[]): Plant[] {
     return plants.filter(plant => plant.petFriendly === true);
   }
 }
