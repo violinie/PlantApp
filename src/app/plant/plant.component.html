@@ -1,12 +1,23 @@
 <section class="row">
   <h1>Všechny rostliny</h1>
-  <p class="my-3">In ultricies fermentum aliquet. Pellentesque dui magna, condimentum non ullamcorper at, cursus in sem. Nunc condimentum, purus ac enenatis commodo libero, am auctor porta tortor, nec consequat nibh finibus a. </p>
+  <p class="my-3">
+    In ultricies fermentum aliquet. Pellentesque dui magna, condimentum non
+    ullamcorper at, cursus in sem. Nunc condimentum, purus ac enenatis commodo
+    libero, am auctor porta tortor, nec consequat nibh finibus a.
+  </p>
   <app-filter class="col-md-3"></app-filter>
   <div class="col-md-9">
     <div class="row">
-   <figure class="col-6 col-lg-4" *ngFor="let plant of plants">
-      <app-card [plant]="plant" class="card"></app-card>
-   </figure>
-  </div>
+      <ng-container *ngIf="plants?.length; else tmp">
+        <figure class="col-6 col-lg-4" *ngFor="let plant of plants">
+          <app-card [plant]="plant" class="card"></app-card>
+        </figure>
+      </ng-container>
+      <ng-template #tmp>
+        <div *ngFor="let x of Array.from({ length: 6 })" class="col-6 col-lg-4">
+          <div class="card"><app-placeholder></app-placeholder></div>
+        </div>
+      </ng-template>
+    </div>
   </div>
 </section>

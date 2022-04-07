@@ -1,9 +1,8 @@
 <a [routerLink]="['/plant', plant?.slug]">
-  <div class="position-relative overflow-hidden">
+  <div class="ratio ratio-1x1 position-relative">
     <img
-      [src]="plant?.image"
-      class="card-img-top img__plant"
-      [title]="plant?.name + ' image'"
+    [src]="plant?.image"
+      class="card-img-top img__plant position-absolute"
       alt=""
     />
   </div>
