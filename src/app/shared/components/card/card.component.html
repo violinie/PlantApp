@@ -1,10 +1,12 @@
 <a [routerLink]="['/plant', plant?.slug]">
-  <img
-    [src]="plant?.image"
-    class="card-img-top img__plant"
-    [title]="plant?.name + ' image'"
-    alt=""
-  />
+  <div class="position-relative overflow-hidden">
+    <img
+      [src]="plant?.image"
+      class="card-img-top img__plant"
+      [title]="plant?.name + ' image'"
+      alt=""
+    />
+  </div>
   <figcaption class="card-body">
     <h2 class="card-title text-center m-0">{{ plant?.name }}</h2>
   </figcaption>
