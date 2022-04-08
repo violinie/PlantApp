@@ -18,7 +18,6 @@ export class PlantComponent {
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
-      console.log('p', params);
       let plants: Plant[] = allPlants;
 
       if (params.get('species')) {
@@ -26,11 +25,15 @@ export class PlantComponent {
         const speciesIds = temp?.split(',').map(Number);
         plants = this.filterSpecies(speciesIds ? speciesIds : [], plants);
       }
-      console.log('select plants', plants);
       if (params.get('petFriendly')) {
-        plants = this.filterBoolean(plants);
+        plants = this.filterBoolean(plants, 'petFriendly');
       }
-      console.log('checkbox plants', plants);
+      if (params.get('hydroponics')) {
+        plants = this.filterBoolean(plants, 'hydroponics');
+      }
+      if (params.get('purifyAir')) {
+        plants = this.filterBoolean(plants, 'purifyAir');
+      }
       this.plants = plants;
     });
   }
@@ -40,7 +43,7 @@ export class PlantComponent {
     return plants.filter(plant => species.includes(plant.species));
   }
 
-  private filterBoolean(plants: Plant[]): Plant[] {
-    return plants.filter(plant => plant.petFriendly === true);
+  private filterBoolean(plants: Plant[], attribute: keyof Plant): Plant[] {
+    return plants.filter(plant => plant[attribute] === true);
   }
 }

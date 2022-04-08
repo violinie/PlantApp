@@ -23,7 +23,9 @@ export class FilterComponent implements OnInit {
   public plants$!: Observable<any[]>;
   public plants: any[] = [];
   selectedPlants = [];
-  public checked: boolean = false;
+  public show: boolean = false;
+  public checkHydro: boolean = false;
+  public checkAir: boolean = false;
   public species = species;
 
   constructor(
@@ -41,37 +43,55 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit() {
-    const checked = this.route.snapshot.queryParamMap.get('petFriendly');
-    this.checked = checked === 'true';
+    this.show = this.handleCheckboxes('petFriendly');
+    this.checkHydro = this.handleCheckboxes('hydroponics');
+    this.checkAir = this.handleCheckboxes('purifyAir');
     // this.filterService.getPlants().subscribe(x => {
     //   this.plants = x;
     // });
     this.loadPlants();
   }
 
-  onCheckboxChange(evt: any) {
+  private handleCheckboxes(checkboxName: string): boolean {
+    const checked = this.route.snapshot.queryParamMap.get(checkboxName);
+    return checked === 'true';
+  }
+
+  onPetFriendlyChange(evt: any) {
     // toggle checkbox
     const checked = evt.target.checked;
     console.log(checked);
 
     this.router.navigate(['plant'], {
-      queryParams: { petFriendly: checked ? true : null },
+      queryParams: {
+        petFriendly: checked ? true : null
+      },
       queryParamsHandling: 'merge'
     });
   }
 
-  // public addItem(plant: Plant): void {
-  //   this.selectedPlantIds.push(plant.id);
-  //   const selectedPlantIds = [...this.selectedPlantIds];
-  //   this.addQueryParams(selectedPlantIds);
-  // }
+  onHydroChange(evt: any) {
+    // toggle checkbox
+    const checked = evt.target.checked;
 
-  // public removeItem(plant: Plant): void {
-  //   const selectedPlantIds = this.selectedPlantIds.filter(id => {
-  //     return id !== plant.id;
-  //   });
-  //   this.addQueryParams(selectedPlantIds);
-  // }
+    this.router.navigate(['plant'], {
+      queryParams: {
+        hydroponics: checked ? true : null
+      },
+      queryParamsHandling: 'merge'
+    });
+  }
+
+  onAirChange(evt: any) {
+    const checked = evt.target.checked;
+
+    this.router.navigate(['plant'], {
+      queryParams: {
+        purifyAir: checked ? true : null
+      },
+      queryParamsHandling: 'merge'
+    });
+  }
 
   changeItems(plants: Plant[]) {
     console.log('plants', plants);

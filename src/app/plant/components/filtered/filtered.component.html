@@ -5,10 +5,20 @@
   <!-- <div class="card p-2">
     <fa-icon [icon]="faSun"></fa-icon><span>{{ plant?.light }}</span>
   </div> -->
-  <div *ngIf="plant?.purifyAir" class="card flex-row gap-2 p-2">
+  <a
+    *ngIf="plant?.purifyAir"
+    [routerLink]="['/plant']"
+    [queryParams]="{ purifyAir: true }"
+    class="card flex-row gap-2 p-2"
+  >
     <span>Čistí&nbsp;vzduch</span>
-  </div>
-  <div *ngIf="plant?.petFriendly" class="card flex-row gap-2 p-2">
-   <span>Nejedovatá</span>
-  </div>
+  </a>
+  <a
+    *ngIf="plant?.petFriendly"
+    [routerLink]="['/plant']"
+    [queryParams]="{ petFriendly: true }"
+    class="card flex-row gap-2 p-2"
+  >
+    <span>Nejedovatá</span>
+  </a>
 </div>
