@@ -23,7 +23,7 @@ export class FilterComponent implements OnInit {
   public plants$!: Observable<any[]>;
   public plants: any[] = [];
   selectedPlants = [];
-  public show: boolean = false;
+  public checkPoisonous: boolean = false;
   public checkHydro: boolean = false;
   public checkAir: boolean = false;
   public species = species;
@@ -43,9 +43,15 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.show = this.handleCheckboxes('petFriendly');
+    this.checkPoisonous = this.handleCheckboxes('petFriendly');
     this.checkHydro = this.handleCheckboxes('hydroponics');
     this.checkAir = this.handleCheckboxes('purifyAir');
+    console.log(
+      'checkbox',
+      this.checkPoisonous,
+      this.checkHydro,
+      this.checkAir
+    );
     // this.filterService.getPlants().subscribe(x => {
     //   this.plants = x;
     // });
@@ -102,6 +108,9 @@ export class FilterComponent implements OnInit {
   onReset() {
     this.router.navigate(['plant'], {});
     this.selectedPlants = [];
+    this.checkAir = false;
+    this.checkHydro = false;
+    this.checkPoisonous = false;
   }
 
   clearModel() {
