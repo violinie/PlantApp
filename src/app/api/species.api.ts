@@ -13,7 +13,7 @@ export const species = [
   },
   {
     id: 4,
-    name: 'Epipremnum-scindapsus'
+    name: 'Epipremnum & Scindapsus'
   },
   {
     id: 5,

@@ -6,7 +6,6 @@ import {
   Propagation,
   Water
 } from '../interfaces/plant.interface';
-// import { species } from './species.api';
 
 export const plants: Plant[] = [
   {
@@ -20,7 +19,7 @@ export const plants: Plant[] = [
     light: Light.little,
     purifyAir: true,
     petFriendly: false,
-    hydroponics: true,
+    hydroponics: false,
     water: Water.extreme,
     dew: Dew.yes,
     propagation: Propagation.topCut,
@@ -38,7 +37,7 @@ export const plants: Plant[] = [
     light: Light.little,
     purifyAir: true,
     petFriendly: true,
-    hydroponics: true,
+    hydroponics: false,
     water: Water.little,
     dew: Dew.no,
     propagation: Propagation.dividing,
@@ -54,8 +53,8 @@ export const plants: Plant[] = [
     difficulty: Difficulty.easy,
     light: Light.normal,
     purifyAir: true,
-    petFriendly: false,
-    hydroponics: true,
+    petFriendly: true,
+    hydroponics: false,
     water: Water.lot,
     dew: Dew.yes,
     propagation: Propagation.stemcut,
@@ -70,7 +69,7 @@ export const plants: Plant[] = [
       'Rod rostlin z čeledi áronovitých (Araceae). Zahrnuje asi 20 druhů mohutných lián, rozšířených v tropické Asii a Austrálii. Mladé formy šplhavnice zlaté s panašovanými listy se pěstují jako pokojové rostliny, často pod nesprávným názvem potos nebo scindapsus.',
     difficulty: Difficulty.easy,
     light: Light.little,
-    purifyAir: true,
+    purifyAir: false,
     petFriendly: false,
     hydroponics: true,
     water: Water.medium,
@@ -86,7 +85,8 @@ export const plants: Plant[] = [
     desctiption:
       'Pochází z Indonésie, Malajsie a Šalamounovy ostrovy. Tato popínavá, velmi rychle rostoucí rostlina s listy se srdcovitým tvarem, které jsou posety bílými skrvrnkami, patří k liánám a pěstuje se tak při opoře nebo v závěsu.',
     image: 'https://source.unsplash.com/random/600x600?scindapsus',
-    hydroponics: true,
+    hydroponics: false,
+    petFriendly: true,
     difficulty: Difficulty.easy,
     light: Light.little,
     water: Water.little,
@@ -105,7 +105,7 @@ export const plants: Plant[] = [
     difficulty: Difficulty.easy,
     light: Light.normal,
     purifyAir: true,
-    petFriendly: false,
+    petFriendly: true,
     water: Water.medium,
     dew: Dew.yes,
     hydroponics: true,
@@ -116,7 +116,6 @@ export const plants: Plant[] = [
         causes: ['malá vzdušná vlhkost', 'málo vody']
       }
     ],
-    // 'Hnědnutí konců listů: malá vzdušná vlhkost / málo vody; třásněnky',
     species: 5
   },
   {
@@ -125,7 +124,7 @@ export const plants: Plant[] = [
     desctiption:
       'Alokázie patří mezi áronovité rostliny vyrůstající z hlízovitých oddenků. Vyznačují se velkými šípovitými až srdčitými listy, které rostou na dlouhých řapících. Listy alokázií jsou velmi zdobné, většinou s výrazným žebrováním a hladkými nebo zvlněnými okraji. Jsou to rostliny velmi náročné s vyššími požadavky na péči. Tento druh Alokázií je menšího vzrůstu s téměř černými listy ve tvaru srdce a jejich povrch vypadá jako samet protkaný bílým žilkováním. ',
     image: 'https://source.unsplash.com/random/600x600?plant',
-    hydroponics: true,
+    hydroponics: false,
     difficulty: Difficulty.easy,
     light: Light.little,
     water: Water.little,
