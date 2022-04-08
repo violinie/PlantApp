@@ -1,47 +1,51 @@
-<app-breadcrumbs></app-breadcrumbs>
-<div class="row">
-  <div class="col-md-6 col-12">
-    <img [src]="plant?.image" alt="" class="rounded img__plant w-100 mb-4"/>
-  </div>
-  <div class="col-md-6 col-12">
-    <h1>{{ plant?.name }}</h1>
-    <p>{{ plant?.desctiption }}</p>
-    <app-filtered [plant]="plant"></app-filtered>
-    <div class="py-3 list__item d-flex gap-2">
-      <fa-icon [icon]="faTint"></fa-icon>
-      <div>
-        <h2>Zálivka</h2>
-        <div>{{ plant?.water }}</div>
-      </div>
+<section class="container container--spacer">
+  <app-breadcrumbs></app-breadcrumbs>
+  <div class="row">
+    <div class="col-md-6 col-12">
+      <img [src]="plant?.image" alt="" class="rounded img__plant w-100 mb-4" />
     </div>
-    <div class="py-3 list__item d-flex gap-2">
-      <fa-icon [icon]="faCloudRain"></fa-icon>
-      <div>
-        <h2>Vlhkost</h2>
-        <div>{{ plant?.dew }}</div>
+    <div class="col-md-6 col-12">
+      <h1>{{ plant?.name }}</h1>
+      <p>{{ plant?.desctiption }}</p>
+      <app-filtered [plant]="plant"></app-filtered>
+      <div class="py-3 list__item d-flex gap-2">
+        <fa-icon [icon]="faTint"></fa-icon>
+        <div>
+          <h2>Zálivka</h2>
+          <div>{{ plant?.water }}</div>
+        </div>
       </div>
-    </div>
-    <div class="py-3 list__item d-flex gap-2">
-      <fa-icon [icon]="faMehBlank"></fa-icon>
-      <div>
-        <h2>Hydroponie</h2>
-        <div>{{ plant?.hydroponics ? 'Ano' : 'Ne'}}</div>
+      <div class="py-3 list__item d-flex gap-2">
+        <fa-icon [icon]="faCloudRain"></fa-icon>
+        <div>
+          <h2>Vlhkost</h2>
+          <div>{{ plant?.dew }}</div>
+        </div>
       </div>
-    </div>
-    <div class="py-3 list__item d-flex gap-2">
-      <fa-icon [icon]="faSeedling"></fa-icon>
-      <div>
-        <h2>Množení</h2>
-        <div>{{ plant?.propagation }}</div>
+      <div class="py-3 list__item d-flex gap-2">
+        <fa-icon [icon]="faMehBlank"></fa-icon>
+        <div>
+          <h2>Hydroponie</h2>
+          <div>{{ plant?.hydroponics ? 'Ano' : 'Ne' }}</div>
+        </div>
       </div>
-    </div>
-    <div *ngIf="plant?.commonProblems" class="py-3 list__item d-flex gap-2">
-      <fa-icon [icon]="faExclamationTriangle"></fa-icon>
-      <div>
-        <h2>Časté problémy</h2>
+      <div class="py-3 list__item d-flex gap-2">
+        <fa-icon [icon]="faSeedling"></fa-icon>
+        <div>
+          <h2>Množení</h2>
+          <div>{{ plant?.propagation }}</div>
+        </div>
+      </div>
+      <div *ngIf="plant?.commonProblems" class="py-3 list__item d-flex gap-2">
+        <fa-icon [icon]="faExclamationTriangle"></fa-icon>
+        <div>
+          <h2>Časté problémy</h2>
 
-        <div *ngFor="let commonProblems of plant?.commonProblems">{{ commonProblems.symptom + commonProblems.causes }}</div>
+          <div *ngFor="let commonProblems of plant?.commonProblems">
+            {{ commonProblems.symptom + commonProblems.causes }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
