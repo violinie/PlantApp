@@ -2,12 +2,3 @@
 @import '../variables.scss';
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/utilities';
-
-.container {
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-  @include media-breakpoint-up(sm) {
-    margin-top: 5rem;
-    margin-bottom: 10rem;
-  }
-}
