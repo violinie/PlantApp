@@ -1,16 +1,18 @@
 <section class="hero text-center text-white">
   <div class="glass">
-    <h1>claim</h1>
-    <p class="px-3">
-      In ultricies fermentum aliquet. Pellentesque dui magna, condimentum non
-      ullamcorper at, cursus in sem.
+    <h1>Jaro je sezóna přesazování</h1>
+    <p class="px-3 fs-5">
+      Nemáte co přesadit? Najděte si svojí ideální pokojovku v našem
+      rozcestníku.
     </p>
-    <button class="btn btn-success px-5 mt-4">button</button>
+    <button class="btn btn-success px-5 mt-4">
+      <a [routerLink]="['/plant']">Všechny rostliny</a>
+    </button>
   </div>
 </section>
 
 <!-- first 6 plants of all -->
-<section class="mt-5 container">
+<section class="container container--spacer">
   <h2 class="my-4">Title 2</h2>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let plant of sliced">
