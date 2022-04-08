@@ -66,7 +66,7 @@ export class FilterComponent implements OnInit {
   onPetFriendlyChange(evt: any) {
     // toggle checkbox
     const checked = evt.target.checked;
-    console.log(checked);
+    this.checkPoisonous = checked;
 
     this.router.navigate(['plant'], {
       queryParams: {
@@ -79,6 +79,7 @@ export class FilterComponent implements OnInit {
   onHydroChange(evt: any) {
     // toggle checkbox
     const checked = evt.target.checked;
+    this.checkHydro = checked;
 
     this.router.navigate(['plant'], {
       queryParams: {
@@ -90,6 +91,7 @@ export class FilterComponent implements OnInit {
 
   onAirChange(evt: any) {
     const checked = evt.target.checked;
+    this.checkAir = checked;
 
     this.router.navigate(['plant'], {
       queryParams: {
