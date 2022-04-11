@@ -7,10 +7,6 @@
   >
     <span>{{ name }}</span>
   </a>
-
-  <!-- <div class="card p-2">
-    <fa-icon [icon]="faSun"></fa-icon><span>{{ plant?.light }}</span>
-  </div> -->
   <a
     *ngIf="plant?.purifyAir"
     [routerLink]="['/plant']"

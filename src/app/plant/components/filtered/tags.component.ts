@@ -9,12 +9,12 @@ import { difficulty } from 'src/app/api/difficulty.api';
 import { Plant } from 'src/app/interfaces/plant.interface';
 
 @Component({
-  selector: 'app-filtered',
-  templateUrl: './filtered.component.html',
-  styleUrls: ['./filtered.component.scss'],
+  selector: 'app-tags',
+  templateUrl: './tags.component.html',
+  styleUrls: ['./tags.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FilteredComponent implements OnInit {
+export class TagsComponent implements OnInit {
   public difficulty = difficulty;
 
   faSun = faSun;
