@@ -39,18 +39,10 @@ export class FilterComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  private addSpeciesParams(ids: number[]): void {
+  private addQueryParams(ids: number[], attribute: string): void {
     const str = ids.join(',');
     this.router.navigate(['/plant'], {
-      queryParams: { species: str ? str : null },
-      queryParamsHandling: 'merge'
-    });
-  }
-
-  private addDifficultyParams(ids: number[]): void {
-    const str = ids.join(',');
-    this.router.navigate(['/plant'], {
-      queryParams: { difficulty: str ? str : null },
+      queryParams: { [attribute]: str ? str : null },
       queryParamsHandling: 'merge'
     });
   }
@@ -96,16 +88,10 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  changeSpecItems(plants: Plant[]) {
+  changeItems(plants: Plant[], attribute: string) {
     console.log('plants', plants);
     const selectedPlantIds = plants.map(plant => plant.id);
-    this.addSpeciesParams(selectedPlantIds);
-  }
-
-  changeDiffItems(plants: Plant[]) {
-    console.log('plants', plants);
-    const selectedPlantIds = plants.map(plant => plant.id);
-    this.addDifficultyParams(selectedPlantIds);
+    this.addQueryParams(selectedPlantIds, attribute);
   }
 
   onReset() {
