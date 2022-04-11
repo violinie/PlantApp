@@ -80,6 +80,18 @@ export class FilterComponent implements OnInit {
     const checked = evt.target.checked;
     checkbox = checked;
 
+    switch (checkbox) {
+      case attribute === 'petFriendly':
+        this.checkPoisonous = checked;
+        break;
+      case attribute === 'hydroponics':
+        this.checkHydro = checked;
+        break;
+      case attribute === 'purifyAir':
+        this.checkAir = checked;
+        break;
+    }
+
     this.router.navigate(['plant'], {
       queryParams: {
         [attribute]: checked ? true : null
