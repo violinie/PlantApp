@@ -112,7 +112,7 @@ export const plants: Plant[] = [
     commonProblems: [
       {
         symptom: 'Hnědnutí konců listů: ',
-        causes: ['malá vzdušná vlhkost', 'málo vody']
+        causes: ['malá vzdušná vlhkost', ' málo vody']
       }
     ],
     species: 5

@@ -1,7 +1,13 @@
 <div class="my-4 d-flex align-items-center flex-wrap gap-3">
-  <div class="card flex-row gap-2 p-2">
-    <span>{{ plant?.difficulty }}</span>
-  </div>
+  <a
+    *ngIf="name !== ''"
+    [routerLink]="['/plant']"
+    [queryParams]="{ difficulty: plant?.difficulty }"
+    class="card flex-row gap-2 p-2"
+  >
+    <span>{{ name }}</span>
+  </a>
+
   <!-- <div class="card p-2">
     <fa-icon [icon]="faSun"></fa-icon><span>{{ plant?.light }}</span>
   </div> -->

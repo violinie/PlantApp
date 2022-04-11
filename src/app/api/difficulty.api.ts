@@ -1,10 +1,10 @@
 export const difficulty = [
   {
     id: 1,
-    level: 'Pro začátečníky'
+    name: 'Pro začátečníky'
   },
   {
     id: 2,
-    level: 'Pro pokročilé'
+    name: 'Pro pokročilé'
   }
 ];
