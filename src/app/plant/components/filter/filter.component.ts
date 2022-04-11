@@ -23,7 +23,7 @@ import { DataService } from './data.service';
 export class FilterComponent implements OnInit {
   public plants$!: Observable<any[]>;
   public plants: any[] = [];
-  selectedPlants = [];
+  public selectedPlants: number[] = [];
   public checkPoisonous: boolean = false;
   public checkHydro: boolean = false;
   public checkAir: boolean = false;
@@ -45,6 +45,14 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.queryParamMap.subscribe(params => {
+      const speciesParams = params.get('species');
+      if (speciesParams) {
+        this.selectedPlants = speciesParams.split(',').map(Number);
+      }
+      this.plants = plants;
+    });
+
     this.checkPoisonous = this.handleCheckboxes('petFriendly');
     this.checkHydro = this.handleCheckboxes('hydroponics');
     this.checkAir = this.handleCheckboxes('purifyAir');

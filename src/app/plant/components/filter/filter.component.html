@@ -13,7 +13,6 @@
       [(ngModel)]="selectedPlants"
     >
     </ng-select>
-    <!-- {{ selectedPlants | json }} -->
   </div>
   <div class="mb-3">
     Náročnost
@@ -29,7 +28,6 @@
       [(ngModel)]="selectedPlants"
     >
     </ng-select>
-    <!-- {{ selectedPlants | json }} -->
   </div>
   <div class="mb-3">
     Množství světla
@@ -50,7 +48,6 @@
     <input
       class="form-check-input"
       type="checkbox"
-      value=""
       id="petFriendly"
       (change)="onCheckboxChange($event, checkPoisonous, 'petFriendly')"
       [checked]="checkPoisonous"
@@ -63,7 +60,6 @@
     <input
       class="form-check-input"
       type="checkbox"
-      value=""
       id="hydroponics"
       (change)="onCheckboxChange($event, checkHydro, 'hydroponics')"
       [checked]="checkHydro"
@@ -76,7 +72,6 @@
     <input
       class="form-check-input"
       type="checkbox"
-      value=""
       id="purifyAir"
       (change)="onCheckboxChange($event, checkAir, 'purifyAir')"
       [checked]="checkAir"
