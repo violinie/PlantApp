@@ -21,9 +21,17 @@ export class PlantComponent {
       let plants: Plant[] = allPlants;
 
       if (params.get('species')) {
-        let temp: string | null = params.get('species');
-        const speciesIds = temp?.split(',').map(Number);
+        let speciesParams: string | null = params.get('species');
+        const speciesIds = speciesParams?.split(',').map(Number);
         plants = this.filterSpecies(speciesIds ? speciesIds : [], plants);
+      }
+      if (params.get('difficulty')) {
+        let difficultyParams: string | null = params.get('difficulty');
+        const difficultyIds = difficultyParams?.split(',').map(Number);
+        plants = this.filterDifficulty(
+          difficultyIds ? difficultyIds : [],
+          plants
+        );
       }
       if (params.get('petFriendly')) {
         plants = this.filterBoolean(plants, 'petFriendly');
@@ -41,6 +49,11 @@ export class PlantComponent {
   private filterSpecies(species: number[], plants: Plant[]): Plant[] {
     console.log('species', species, plants);
     return plants.filter(plant => species.includes(plant.species));
+  }
+
+  private filterDifficulty(difficulty: number[], plants: Plant[]): Plant[] {
+    console.log('difficulty', difficulty, plants);
+    return plants.filter(plant => difficulty.includes(plant.difficulty));
   }
 
   private filterBoolean(plants: Plant[], attribute: keyof Plant): Plant[] {

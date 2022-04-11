@@ -10,6 +10,7 @@ import {
   switchMap,
   tap
 } from 'rxjs';
+import { difficulty } from 'src/app/api/difficulty.api';
 import { plants } from 'src/app/api/plants.api';
 import { species } from 'src/app/api/species.api';
 import { Plant } from 'src/app/interfaces/plant.interface';
@@ -23,11 +24,13 @@ import { DataService } from './data.service';
 export class FilterComponent implements OnInit {
   public plants$!: Observable<any[]>;
   public plants: any[] = [];
-  public selectedPlants: number[] = [];
+  public selectedSpecies: number[] = [];
+  public selectedLevel: number[] = [];
   public checkPoisonous: boolean = false;
   public checkHydro: boolean = false;
   public checkAir: boolean = false;
   public species = species;
+  public difficulty = difficulty;
   public plantsApi = plants;
 
   constructor(
@@ -36,7 +39,7 @@ export class FilterComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  private addQueryParams(ids: number[]): void {
+  private addSpeciesParams(ids: number[]): void {
     const str = ids.join(',');
     this.router.navigate(['/plant'], {
       queryParams: { species: str ? str : null },
@@ -44,11 +47,23 @@ export class FilterComponent implements OnInit {
     });
   }
 
+  private addDifficultyParams(ids: number[]): void {
+    const str = ids.join(',');
+    this.router.navigate(['/plant'], {
+      queryParams: { difficulty: str ? str : null },
+      queryParamsHandling: 'merge'
+    });
+  }
+
   ngOnInit() {
     this.route.queryParamMap.subscribe(params => {
       const speciesParams = params.get('species');
+      const difficultyParams = params.get('difficulty');
       if (speciesParams) {
-        this.selectedPlants = speciesParams.split(',').map(Number);
+        this.selectedSpecies = speciesParams.split(',').map(Number);
+      }
+      if (difficultyParams) {
+        this.selectedLevel = difficultyParams.split(',').map(Number);
       }
       this.plants = plants;
     });
@@ -81,26 +96,25 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  changeItems(plants: Plant[]) {
+  changeSpecItems(plants: Plant[]) {
     console.log('plants', plants);
     const selectedPlantIds = plants.map(plant => plant.id);
-    this.addQueryParams(selectedPlantIds);
+    this.addSpeciesParams(selectedPlantIds);
+  }
+
+  changeDiffItems(plants: Plant[]) {
+    console.log('plants', plants);
+    const selectedPlantIds = plants.map(plant => plant.id);
+    this.addDifficultyParams(selectedPlantIds);
   }
 
   onReset() {
     this.router.navigate(['plant'], {});
-    this.selectedPlants = [];
+    this.selectedSpecies = [];
+    this.selectedLevel = [];
     this.checkAir = false;
     this.checkHydro = false;
     this.checkPoisonous = false;
-  }
-
-  clearModel() {
-    this.selectedPlants = [];
-  }
-
-  changeModel() {
-    this.selectedPlants = [];
   }
 
   people$!: Observable<Plant[]>;
