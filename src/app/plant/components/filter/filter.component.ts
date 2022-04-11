@@ -56,7 +56,11 @@ export class FilterComponent implements OnInit {
     return checked === 'true';
   }
 
-  onCheckboxChange(evt: any, checkbox: boolean, attribute: string) {
+  onCheckboxChange(
+    evt: any,
+    checkbox: boolean,
+    attribute: 'petFriendly' | 'hydroponics' | 'purifyAir'
+  ) {
     // toggle checkbox
     const checked = evt.target.checked;
     checkbox = checked;
