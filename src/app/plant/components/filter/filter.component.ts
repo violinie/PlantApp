@@ -10,6 +10,7 @@ import {
   switchMap,
   tap
 } from 'rxjs';
+import { plants } from 'src/app/api/plants.api';
 import { species } from 'src/app/api/species.api';
 import { Plant } from 'src/app/interfaces/plant.interface';
 import { DataService } from './data.service';
@@ -27,6 +28,7 @@ export class FilterComponent implements OnInit {
   public checkHydro: boolean = false;
   public checkAir: boolean = false;
   public species = species;
+  public plantsApi = plants;
 
   constructor(
     private filterService: DataService,
@@ -46,15 +48,6 @@ export class FilterComponent implements OnInit {
     this.checkPoisonous = this.handleCheckboxes('petFriendly');
     this.checkHydro = this.handleCheckboxes('hydroponics');
     this.checkAir = this.handleCheckboxes('purifyAir');
-    console.log(
-      'checkbox',
-      this.checkPoisonous,
-      this.checkHydro,
-      this.checkAir
-    );
-    // this.filterService.getPlants().subscribe(x => {
-    //   this.plants = x;
-    // });
     this.loadPlants();
   }
 
@@ -63,39 +56,14 @@ export class FilterComponent implements OnInit {
     return checked === 'true';
   }
 
-  onPetFriendlyChange(evt: any) {
+  onCheckboxChange(evt: any, checkbox: boolean, attribute: string) {
     // toggle checkbox
     const checked = evt.target.checked;
-    this.checkPoisonous = checked;
+    checkbox = checked;
 
     this.router.navigate(['plant'], {
       queryParams: {
-        petFriendly: checked ? true : null
-      },
-      queryParamsHandling: 'merge'
-    });
-  }
-
-  onHydroChange(evt: any) {
-    // toggle checkbox
-    const checked = evt.target.checked;
-    this.checkHydro = checked;
-
-    this.router.navigate(['plant'], {
-      queryParams: {
-        hydroponics: checked ? true : null
-      },
-      queryParamsHandling: 'merge'
-    });
-  }
-
-  onAirChange(evt: any) {
-    const checked = evt.target.checked;
-    this.checkAir = checked;
-
-    this.router.navigate(['plant'], {
-      queryParams: {
-        purifyAir: checked ? true : null
+        [attribute]: checked ? true : null
       },
       queryParamsHandling: 'merge'
     });

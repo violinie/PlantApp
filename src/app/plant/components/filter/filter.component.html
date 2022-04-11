@@ -9,7 +9,38 @@
       [searchable]="false"
       bindLabel="name"
       bindValue="id"
-      placeholder="Select"
+      placeholder="Všechny"
+      [(ngModel)]="selectedPlants"
+    >
+    </ng-select>
+    <!-- {{ selectedPlants | json }} -->
+  </div>
+  <div class="mb-3">
+    Náročnost
+    <ng-select
+      [items]="plantsApi"
+      (change)="changeItems($event)"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      [searchable]="false"
+      bindLabel="difficulty"
+      bindValue="id"
+      placeholder="Všechny"
+      [(ngModel)]="selectedPlants"
+    >
+    </ng-select>
+    <!-- {{ selectedPlants | json }} -->
+  </div>
+  <div class="mb-3">
+    Množství světla
+    <ng-select
+      [items]="plantsApi"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      [searchable]="false"
+      bindLabel="light"
+      bindValue="id"
+      placeholder="Všechny"
       [(ngModel)]="selectedPlants"
     >
     </ng-select>
@@ -21,7 +52,7 @@
       type="checkbox"
       value=""
       id="petFriendly"
-      (change)="onPetFriendlyChange($event)"
+      (change)="onCheckboxChange($event, checkPoisonous, 'petFriendly')"
       [checked]="checkPoisonous"
     />
     <label class="form-check-label" for="petFriendly">
@@ -34,7 +65,7 @@
       type="checkbox"
       value=""
       id="hydroponics"
-      (change)="onHydroChange($event)"
+      (change)="onCheckboxChange($event, checkHydro, 'hydroponics')"
       [checked]="checkHydro"
     />
     <label class="form-check-label" for="hydroponics">
@@ -47,7 +78,7 @@
       type="checkbox"
       value=""
       id="purifyAir"
-      (change)="onAirChange($event)"
+      (change)="onCheckboxChange($event, checkAir, 'purifyAir')"
       [checked]="checkAir"
     />
     <label class="form-check-label" for="purifyAir">
