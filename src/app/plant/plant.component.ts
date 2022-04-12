@@ -48,13 +48,15 @@ export class PlantComponent {
   }
 
   private filterSpecies(species: number[], plants: Plant[]): Plant[] {
-    console.log('species', species, plants);
     return plants.filter(plant => species.includes(plant.species));
   }
 
   private filterDifficulty(difficulty: number[], plants: Plant[]): Plant[] {
-    difficultyApi.filter(x => x.id).find(x => x.enum);
-    return plants.filter(plant => difficulty.includes(plant.difficulty)); //FIX
+    const difficultyObjects = difficultyApi.filter(diff =>
+      difficulty.includes(diff.id)
+    );
+    const enums = difficultyObjects.map(x => x.enum);
+    return plants.filter(plant => enums.includes(plant.difficulty));
   }
 
   private filterBoolean(plants: Plant[], attribute: keyof Plant): Plant[] {

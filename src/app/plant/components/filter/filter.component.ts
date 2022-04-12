@@ -101,7 +101,6 @@ export class FilterComponent implements OnInit {
   }
 
   changeItems(plants: Plant[], attribute: string) {
-    console.log('plants', plants);
     const selectedPlantIds = plants.map(plant => plant.id);
     this.addQueryParams(selectedPlantIds, attribute);
   }
