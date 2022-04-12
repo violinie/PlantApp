@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { difficulty as difficultyApi } from '../api/difficulty.api';
+import { light as lightApi } from '../api/light.api';
 import { plants as allPlants } from '../api/plants.api';
 import { Plant } from '../interfaces/plant.interface';
 
@@ -37,7 +38,7 @@ export class PlantComponent {
       if (params.get('light')) {
         let lightParams: string | null = params.get('light');
         const lightIds = lightParams?.split(',').map(Number);
-        plants = this.filterDifficulty(lightIds ? lightIds : [], plants);
+        plants = this.filterLight(lightIds ? lightIds : [], plants);
       }
       if (params.get('petFriendly')) {
         plants = this.filterBoolean(plants, 'petFriendly');
@@ -62,6 +63,12 @@ export class PlantComponent {
     );
     const enums = difficultyObjects.map(x => x.enum);
     return plants.filter(plant => enums.includes(plant.difficulty));
+  }
+
+  private filterLight(light: number[], plants: Plant[]): Plant[] {
+    const lightObjects = lightApi.filter(obj => light.includes(obj.id));
+    const enums = lightObjects.map(x => x.enum);
+    return plants.filter(plant => enums.includes(plant.light));
   }
 
   private filterBoolean(plants: Plant[], attribute: keyof Plant): Plant[] {

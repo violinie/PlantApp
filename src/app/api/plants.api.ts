@@ -34,7 +34,7 @@ export const plants: Plant[] = [
     desctiption:
       'Rod rostlin z čeledi árónovité (Araceae). Jsou to středně velké až mohutné byliny s tlustým podzemním oddenkem. Květy jsou jednopohlavné, uspořádané v palici s toulcem. Rod zahrnuje asi 60 až 70 druhů a je přirozeně rozšířen v tropech a subtropech Asie, Austrálie a Tichomoří. Tuto alokázii najdete také pod názvem sloní ucho a její listy jsou lesklé, na povrchu tmavě zelené a zespodu fialovo hnědé.',
     difficulty: Difficulty.hard,
-    light: Light.little,
+    light: Light.normal,
     purifyAir: true,
     petFriendly: true,
     hydroponics: false,
@@ -68,7 +68,7 @@ export const plants: Plant[] = [
     desctiption:
       'Rod rostlin z čeledi áronovitých (Araceae). Zahrnuje asi 20 druhů mohutných lián, rozšířených v tropické Asii a Austrálii. Mladé formy šplhavnice zlaté s panašovanými listy se pěstují jako pokojové rostliny, často pod nesprávným názvem potos nebo scindapsus.',
     difficulty: Difficulty.easy,
-    light: Light.normal,
+    light: Light.little,
     purifyAir: false,
     petFriendly: false,
     hydroponics: true,
@@ -89,7 +89,7 @@ export const plants: Plant[] = [
     petFriendly: true,
     difficulty: Difficulty.easy,
     light: Light.normal,
-    water: Water.little,
+    water: Water.extreme,
     dew: Dew.no,
     propagation: Propagation.stemcut,
     purpose: 'climbing',

@@ -5,7 +5,7 @@ export interface Plant {
   image: string;
   desctiption: string;
   difficulty: Difficulty;
-  light?: Light;
+  light: Light;
   purifyAir?: boolean;
   petFriendly?: boolean;
   hydroponics: boolean;
