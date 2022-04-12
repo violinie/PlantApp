@@ -6,7 +6,7 @@ import { plants } from 'src/app/api/plants.api';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  public sliced = plants.slice(0, 6);
+  public sliced = plants.slice(plants.length - 3, plants.length);
 
   ngOnInit(): void {}
 }
