@@ -1,8 +1,8 @@
 <div class="my-4 d-flex align-items-center flex-wrap gap-3">
   <a
-    *ngIf="name !== ''"
+    *ngIf="difficultyId"
     [routerLink]="['/plant']"
-    [queryParams]="{ difficulty: plant?.difficulty }"
+    [queryParams]="{ difficulty: difficultyId }"
     class="card flex-row gap-2 p-2"
   >
     <span>{{ name }}</span>

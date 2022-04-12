@@ -15,7 +15,7 @@ export class PlantComponent {
   public plant: Plant | undefined;
   public readonly Array = Array;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
@@ -53,8 +53,12 @@ export class PlantComponent {
   }
 
   private filterDifficulty(difficulty: number[], plants: Plant[]): Plant[] {
-    difficultyApi.filter(x => x.id).find(x => x.enum);
-    return plants.filter(plant => difficulty.includes(plant.difficulty)); //FIX
+    // Filter all objects by id from selected choices
+    const difficultyObjects = difficultyApi.filter(dif => difficulty.includes(dif.id));
+    // Get array of enum values from difficulty objects
+    const enums = difficultyObjects.map(x => x.enum);
+
+    return plants.filter(plant => enums.includes(plant.difficulty));
   }
 
   private filterBoolean(plants: Plant[], attribute: keyof Plant): Plant[] {

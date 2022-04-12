@@ -37,7 +37,7 @@ export class FilterComponent implements OnInit {
     private filterService: DataService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   private addQueryParams(ids: number[], attribute: string): void {
     const str = ids.join(',');

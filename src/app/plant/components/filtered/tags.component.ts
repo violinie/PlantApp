@@ -1,10 +1,8 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Input,
-  OnInit
+  Input
 } from '@angular/core';
-import { faLungs, faPaw, faSun } from '@fortawesome/free-solid-svg-icons';
 import { difficulty } from 'src/app/api/difficulty.api';
 import { Plant } from 'src/app/interfaces/plant.interface';
 
@@ -14,20 +12,23 @@ import { Plant } from 'src/app/interfaces/plant.interface';
   styleUrls: ['./tags.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TagsComponent implements OnInit {
+export class TagsComponent {
   public difficulty = difficulty;
-
-  faSun = faSun;
-  faLungs = faLungs;
-  faPaw = faPaw;
   @Input() public plant: Plant | undefined;
 
-  ngOnInit(): void {}
-
   public get name(): string {
-    const difficultyItem = difficulty.find(
-      diffItem => diffItem.id === this.plant?.difficulty //FIX
+    const diff = this.converEnumToId();
+    return diff?.enum ? diff.enum : '';
+  }
+
+  public get difficultyId(): number {
+    const diff = this.converEnumToId();
+    return diff?.id ? diff.id : 0;
+  }
+
+  private converEnumToId() {
+    return difficulty.find(
+      diffItem => diffItem.enum === this.plant?.difficulty
     );
-    return difficultyItem?.name ? difficultyItem.name : '';
   }
 }
