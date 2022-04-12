@@ -19,7 +19,7 @@ export interface Plant {
 
 export enum Light {
   little = 'Polostín',
-  normal = 'Jasné nepřímé světlo',
+  normal = 'Nepřímé světlo',
   lot = 'Přímé světlo'
 }
 
