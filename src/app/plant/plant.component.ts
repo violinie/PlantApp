@@ -34,6 +34,11 @@ export class PlantComponent {
           plants
         );
       }
+      if (params.get('light')) {
+        let lightParams: string | null = params.get('light');
+        const lightIds = lightParams?.split(',').map(Number);
+        plants = this.filterDifficulty(lightIds ? lightIds : [], plants);
+      }
       if (params.get('petFriendly')) {
         plants = this.filterBoolean(plants, 'petFriendly');
       }

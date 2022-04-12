@@ -9,7 +9,7 @@ export const light = [
   {
     id: 2,
     enum: Light.normal,
-    name: 'Jasné nepřímé světlo' // (2 500–20 000 lux)
+    name: 'Nepřímé světlo' // (2 500–20 000 lux)
   },
   {
     id: 3,

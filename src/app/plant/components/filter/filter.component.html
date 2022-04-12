@@ -33,14 +33,15 @@
   <div class="mb-3">
     Množství světla
     <ng-select
-      [items]="plantsApi"
+      [items]="light"
+      (change)="changeItems($event, 'light')"
       [multiple]="true"
       [closeOnSelect]="false"
       [searchable]="false"
-      bindLabel="light"
+      bindLabel="name"
       bindValue="id"
       placeholder="Všechny"
-      [(ngModel)]="selectedSpecies"
+      [(ngModel)]="selectedLight"
     >
     </ng-select>
   </div>

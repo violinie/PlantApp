@@ -11,6 +11,7 @@ import {
   tap
 } from 'rxjs';
 import { difficulty } from 'src/app/api/difficulty.api';
+import { light } from 'src/app/api/light.api';
 import { plants } from 'src/app/api/plants.api';
 import { species } from 'src/app/api/species.api';
 import { Plant } from 'src/app/interfaces/plant.interface';
@@ -26,11 +27,13 @@ export class FilterComponent implements OnInit {
   public plants: any[] = [];
   public selectedSpecies: number[] = [];
   public selectedLevel: number[] = [];
+  public selectedLight: number[] = [];
   public checkPoisonous: boolean = false;
   public checkHydro: boolean = false;
   public checkAir: boolean = false;
   public species = species;
   public difficulty = difficulty;
+  public light = light;
   public plantsApi = plants;
 
   constructor(
@@ -51,11 +54,15 @@ export class FilterComponent implements OnInit {
     this.route.queryParamMap.subscribe(params => {
       const speciesParams = params.get('species');
       const difficultyParams = params.get('difficulty');
+      const lightParams = params.get('light');
       if (speciesParams) {
         this.selectedSpecies = speciesParams.split(',').map(Number);
       }
       if (difficultyParams) {
         this.selectedLevel = difficultyParams.split(',').map(Number);
+      }
+      if (lightParams) {
+        this.selectedLight = lightParams.split(',').map(Number);
       }
       this.plants = plants;
     });
@@ -109,6 +116,7 @@ export class FilterComponent implements OnInit {
     this.router.navigate(['plant'], {});
     this.selectedSpecies = [];
     this.selectedLevel = [];
+    this.selectedLight = [];
     this.checkAir = false;
     this.checkHydro = false;
     this.checkPoisonous = false;

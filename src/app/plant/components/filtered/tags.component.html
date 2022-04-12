@@ -3,15 +3,23 @@
     *ngIf="name !== ''"
     [routerLink]="['/plant']"
     [queryParams]="{ difficulty: difficultyId() }"
-    class="card flex-row gap-2 p-2"
+    class="card flex-row gap-2 py-2 px-3"
   >
     <span>{{ name }}</span>
+  </a>
+  <a
+    *ngIf="lightName !== ''"
+    [routerLink]="['/plant']"
+    [queryParams]="{ light: lightId() }"
+    class="card flex-row gap-2 py-2 px-3"
+  >
+    <span>{{ lightName }}</span>
   </a>
   <a
     *ngIf="plant?.purifyAir"
     [routerLink]="['/plant']"
     [queryParams]="{ purifyAir: true }"
-    class="card flex-row gap-2 p-2"
+    class="card flex-row gap-2 py-2 px-3"
   >
     <span>Čistí&nbsp;vzduch</span>
   </a>
@@ -19,7 +27,7 @@
     *ngIf="plant?.petFriendly"
     [routerLink]="['/plant']"
     [queryParams]="{ petFriendly: true }"
-    class="card flex-row gap-2 p-2"
+    class="card flex-row gap-2 py-2 px-3"
   >
     <span>Nejedovatá</span>
   </a>
