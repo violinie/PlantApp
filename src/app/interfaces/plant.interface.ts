@@ -4,7 +4,7 @@ export interface Plant {
   slug: string;
   image: string;
   desctiption: string;
-  difficulty: number;
+  difficulty: Difficulty;
   light?: Light;
   purifyAir?: boolean;
   petFriendly?: boolean;
@@ -17,6 +17,17 @@ export interface Plant {
   species: number;
 }
 
+export enum Light {
+  little = 'Polostín',
+  normal = 'Jasné nepřímé světlo',
+  lot = 'Přímé světlo'
+}
+
+export enum Difficulty {
+  easy = 'Pro začátečníky',
+  hard = 'Pro pokročilé'
+}
+
 export interface CommonProblem {
   symptom: string;
   causes: string[];
@@ -26,11 +37,6 @@ export type Purpose =
   // | 'purifyAir'
   // | 'petFriendly'
   'climbing' | 'prayer' | 'blooming';
-
-export enum Light {
-  normal = 'Jasné nepřímé/rozptýlené',
-  little = 'Nepřímé, zvládne i polostín'
-}
 
 export enum Dew {
   yes = 'Vyžaduje rosení',

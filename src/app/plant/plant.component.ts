@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { difficulty as difficultyApi } from '../api/difficulty.api';
 import { plants as allPlants } from '../api/plants.api';
 import { Plant } from '../interfaces/plant.interface';
 
@@ -52,8 +53,8 @@ export class PlantComponent {
   }
 
   private filterDifficulty(difficulty: number[], plants: Plant[]): Plant[] {
-    console.log('difficulty', difficulty, plants);
-    return plants.filter(plant => difficulty.includes(plant.difficulty));
+    difficultyApi.filter(x => x.id).find(x => x.enum);
+    return plants.filter(plant => difficulty.includes(plant.difficulty)); //FIX
   }
 
   private filterBoolean(plants: Plant[], attribute: keyof Plant): Plant[] {

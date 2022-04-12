@@ -26,7 +26,7 @@ export class TagsComponent implements OnInit {
 
   public get name(): string {
     const difficultyItem = difficulty.find(
-      diffItem => diffItem.id === this.plant?.difficulty
+      diffItem => diffItem.id === this.plant?.difficulty //FIX
     );
     return difficultyItem?.name ? difficultyItem.name : '';
   }
