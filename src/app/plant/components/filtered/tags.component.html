@@ -2,7 +2,7 @@
   <a
     *ngIf="name !== ''"
     [routerLink]="['/plant']"
-    [queryParams]="{ difficulty: plant?.difficulty }"
+    [queryParams]="{ difficulty: difficultyId() }"
     class="card flex-row gap-2 p-2"
   >
     <span>{{ name }}</span>

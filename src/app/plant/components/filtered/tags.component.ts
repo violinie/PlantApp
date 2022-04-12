@@ -25,9 +25,18 @@ export class TagsComponent implements OnInit {
   ngOnInit(): void {}
 
   public get name(): string {
-    const difficultyItem = difficulty.find(
-      diffItem => diffItem.id === this.plant?.difficulty //FIX
+    const diff = this.convertEnumtoObject();
+    return diff?.enum ? diff.enum : '';
+  }
+
+  public difficultyId() {
+    const diff = this.convertEnumtoObject();
+    return diff?.id ? diff.id : null;
+  }
+
+  private convertEnumtoObject() {
+    return difficulty.find(
+      diffItem => diffItem.enum === this.plant?.difficulty
     );
-    return difficultyItem?.name ? difficultyItem.name : '';
   }
 }
