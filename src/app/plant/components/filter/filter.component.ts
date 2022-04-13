@@ -87,14 +87,14 @@ export class FilterComponent implements OnInit {
     const checked = evt.target.checked;
     checkbox = checked;
 
-    switch (checkbox) {
-      case attribute === 'petFriendly':
+    switch (attribute) {
+      case 'petFriendly':
         this.checkPoisonous = checked;
         break;
-      case attribute === 'hydroponics':
+      case 'hydroponics':
         this.checkHydro = checked;
         break;
-      case attribute === 'purifyAir':
+      case 'purifyAir':
         this.checkAir = checked;
         break;
     }
@@ -122,8 +122,8 @@ export class FilterComponent implements OnInit {
     this.checkPoisonous = false;
   }
 
-  people$!: Observable<Plant[]>;
-  peopleLoading = false;
+  plant$!: Observable<Plant[]>;
+  plantLoading = false;
   peopleInput$ = new Subject<string>();
 
   trackByFn(item: Plant) {
@@ -131,15 +131,15 @@ export class FilterComponent implements OnInit {
   }
 
   private loadPlants() {
-    this.people$ = concat(
+    this.plant$ = concat(
       of([]), // default items
       this.peopleInput$.pipe(
         distinctUntilChanged(),
-        tap(() => (this.peopleLoading = true)),
+        tap(() => (this.plantLoading = true)),
         switchMap(term =>
           this.filterService.getPlants(term).pipe(
             catchError(() => of([])), // empty list on error
-            tap(() => (this.peopleLoading = false))
+            tap(() => (this.plantLoading = false))
           )
         )
       )
