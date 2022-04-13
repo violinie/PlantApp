@@ -18,9 +18,9 @@ import { Plant } from 'src/app/interfaces/plant.interface';
 import { DataService } from './data.service';
 
 @Component({
-  selector: 'app-filter',
-  templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss']
+  selector: 'app-filters',
+  templateUrl: './filters.component.html',
+  styleUrls: ['./filters.component.scss']
 })
 export class FilterComponent implements OnInit {
   public plants$!: Observable<any[]>;
@@ -28,13 +28,17 @@ export class FilterComponent implements OnInit {
   public selectedSpecies: number[] = [];
   public selectedLevel: number[] = [];
   public selectedLight: number[] = [];
-  public checkPoisonous: boolean = false;
-  public checkHydro: boolean = false;
-  public checkAir: boolean = false;
-  public species = species;
   public difficulty = difficulty;
   public light = light;
+  public species = species;
   public plantsApi = plants;
+  public checkbox: boolean | undefined = undefined;
+
+  // checkboxes
+  // public checkPoisonous: boolean = false;
+  // public checkHydro: boolean = false;
+  // public checkAir: boolean = false;
+  //
 
   constructor(
     private filterService: DataService,
@@ -67,45 +71,53 @@ export class FilterComponent implements OnInit {
       this.plants = plants;
     });
 
-    this.checkPoisonous = this.handleCheckboxes('petFriendly');
-    this.checkHydro = this.handleCheckboxes('hydroponics');
-    this.checkAir = this.handleCheckboxes('purifyAir');
+    // checkboxes
+    // this.checkPoisonous = this.handleCheckboxes('petFriendly');
+    // this.checkHydro = this.handleCheckboxes('hydroponics');
+    // this.checkAir = this.handleCheckboxes('purifyAir');
+    //
     this.loadPlants();
   }
 
+  public changeCheckbox(event: any) {
+    this.checkbox = event;
+  }
+  // checkboxes
   private handleCheckboxes(checkboxName: string): boolean {
     const checked = this.route.snapshot.queryParamMap.get(checkboxName);
     return checked === 'true';
   }
 
-  onCheckboxChange(
-    evt: any,
-    checkbox: boolean,
-    attribute: 'petFriendly' | 'hydroponics' | 'purifyAir'
-  ) {
-    // toggle checkbox
-    const checked = evt.target.checked;
-    checkbox = checked;
+  // onCheckboxChange(
+  //   evt: any,
+  //   checkbox: boolean,
+  //   attribute: 'petFriendly' | 'hydroponics' | 'purifyAir'
+  // ) {
+  //   // toggle checkbox
+  //   const checked = evt.target.checked;
+  //   checkbox = checked;
 
-    switch (attribute) {
-      case 'petFriendly':
-        this.checkPoisonous = checked;
-        break;
-      case 'hydroponics':
-        this.checkHydro = checked;
-        break;
-      case 'purifyAir':
-        this.checkAir = checked;
-        break;
-    }
+  //   switch (attribute) {
+  //     case 'petFriendly':
+  //       this.checkPoisonous = checked;
+  //       break;
+  //     case 'hydroponics':
+  //       this.checkHydro = checked;
+  //       break;
+  //     case 'purifyAir':
+  //       this.checkAir = checked;
+  //       break;
+  //   }
+  //   //
 
-    this.router.navigate(['plant'], {
-      queryParams: {
-        [attribute]: checked ? true : null
-      },
-      queryParamsHandling: 'merge'
-    });
-  }
+  //   //
+  //   this.router.navigate(['plant'], {
+  //     queryParams: {
+  //       [attribute]: checked ? true : null
+  //     },
+  //     queryParamsHandling: 'merge'
+  //   });
+  // }
 
   changeItems(plants: Plant[], attribute: string) {
     const selectedPlantIds = plants.map(plant => plant.id);
@@ -117,9 +129,12 @@ export class FilterComponent implements OnInit {
     this.selectedSpecies = [];
     this.selectedLevel = [];
     this.selectedLight = [];
-    this.checkAir = false;
-    this.checkHydro = false;
-    this.checkPoisonous = false;
+    this.checkbox = false;
+    // checkboxes
+    // this.checkAir = false;
+    // this.checkHydro = false;
+    // this.checkPoisonous = false;
+    //
   }
 
   plant$!: Observable<Plant[]>;
