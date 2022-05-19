@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../filters/data.service';
 
@@ -13,8 +13,7 @@ export class FilterCheckboxComponent implements OnInit {
     '';
   @Input() public name: string = '';
 
-  @Input() public checkbox: boolean | undefined = false;
-  @Output() public checkedEvent = new EventEmitter<boolean>();
+  public checkbox: boolean | undefined = false;
 
   constructor(
     private filterService: DataService,
@@ -23,9 +22,9 @@ export class FilterCheckboxComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.route.queryParamMap.subscribe(params => {
-    //   this.checkbox = this.handleCheckboxes(this.name);
-    // });
+    this.route.queryParamMap.subscribe(params => {
+      this.checkbox = this.handleCheckboxes(this.attribute);
+    });
   }
 
   private handleCheckboxes(checkboxName: string): boolean {
@@ -36,8 +35,6 @@ export class FilterCheckboxComponent implements OnInit {
   onCheckboxChange(evt: any) {
     // toggle checkbox
     const checked = evt.target.checked;
-    // this.checkbox = checked;
-    this.checkedEvent.emit(checked);
 
     this.router.navigate(['plant'], {
       queryParams: {

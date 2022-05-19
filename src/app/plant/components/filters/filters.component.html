@@ -46,15 +46,11 @@
     </ng-select>
   </div>
 
-  <!--checkboxes-->
-
   <app-filter-checkbox
     [attribute]="'petFriendly'"
     [name]="'Není jedovatá'"
-    [checkbox]="checkbox"
-    (checkedEvent)="changeCheckbox($event)"
   ></app-filter-checkbox>
-  l{{ checkbox }}l
+  {{ checkbox }}
   <app-filter-checkbox
     [attribute]="'hydroponics'"
     [name]="'Vhodná do hydroponie'"
@@ -63,46 +59,6 @@
     [attribute]="'purifyAir'"
     [name]="'Čistí vzduch'"
   ></app-filter-checkbox>
-
-  <!--
-  <div class="mt-5">
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="petFriendly"
-        (change)="onCheckboxChange($event, checkPoisonous, 'petFriendly')"
-        [checked]="checkPoisonous"
-      />
-      <label class="form-check-label" for="petFriendly">
-        <div>Není jedovatá</div>
-      </label>
-    </div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="hydroponics"
-        (change)="onCheckboxChange($event, checkHydro, 'hydroponics')"
-        [checked]="checkHydro"
-      />
-      <label class="form-check-label" for="hydroponics">
-        <div>Vhodná do hydroponie</div>
-      </label>
-    </div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="purifyAir"
-        (change)="onCheckboxChange($event, checkAir, 'purifyAir')"
-        [checked]="checkAir"
-      />
-      <label class="form-check-label" for="purifyAir">
-        <div>Čistí vzduch</div>
-      </label>
-    </div>
-  </div> -->
   <a (click)="onReset()" class="text-primary w-40 mb-3 ms-auto" role="button"
     >Resetovat filtry</a
   >
